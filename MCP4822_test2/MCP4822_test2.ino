@@ -13,6 +13,10 @@ SPIClass * hspi = NULL;
 #define VSPI_SCLK   SCK
 #define VSPI_SS     SS
 #define LDAC        22
+#define A_INPUT_1   15
+#define B_INPUT_1   34
+#define A_INPUT_2   4
+#define CS2         2
 
 #if CONFIG_IDF_TARGET_ESP32S2
 #define VSPI FSPI
@@ -26,28 +30,33 @@ static const unsigned long spiClk = 4000000;
 byte channel_sel;  //0 for channel A, 1 for channel B
 byte gain;   //0 for 2x gain, 1 for 1x gain
 byte sdhn;   //0 for inactive, 1 for active
-word dac_data; //12-bit input data to DAC
+word dac1_data; //12-bit input data to DAC
+word dac2_data;
 word write_msg; //16-bit message sent to DAC
 float channel_A;
 float channel_B;
+float channel_A_2;
 
 void setup() {
   vspi = new SPIClass(VSPI);
   
   vspi->begin();
   pinMode(vspi->pinSS(), OUTPUT); //VSPI SS
+  pinMode(CS2, OUTPUT);
+  digitalWrite(CS2, HIGH);
 
 
   channel_sel = 0b0;
   gain = 0b1;
   sdhn = 0b1;
-  dac_data = 0b000000000;
-  write_msg = (channel_sel << 15) + (gain << 13) + (sdhn << 12) + dac_data;
+  dac1_data = 0b000000000;
+  dac2_data = 0b000000000;
+  write_msg = 0b0000000000000000;
 
-  pinMode(34, INPUT);
-  pinMode(35, INPUT);
+  pinMode(B_INPUT_1, INPUT);
+  pinMode(A_INPUT_1, INPUT);
   pinMode(LDAC, OUTPUT);
-  digitalWrite(LDAC, HIGH);
+  digitalWrite(LDAC, LOW);
 
   Serial.begin(115200); //begin serial comms
   delay(100); //wait a bit (100 ms)
@@ -65,9 +74,9 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(LDAC, HIGH);
+  //digitalWrite(LDAC, HIGH);
   channel_sel = 0b0;
-  write_msg = (channel_sel << 15) + (gain << 13) + (sdhn << 12) + dac_data;
+  write_msg = (channel_sel << 15) + (gain << 13) + (sdhn << 12) + dac1_data;
   
   vspi->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE0));
   digitalWrite(vspi->pinSS(), LOW); //pull SS low to prep other end for transfer
@@ -75,37 +84,50 @@ void loop() {
   digitalWrite(vspi->pinSS(), HIGH);
   vspi->endTransaction();
 
-  channel_A = 3.3*(analogRead(34)/4095.0);
-  channel_B = 3.3*(analogRead(35)/4095.0);
+  channel_A = 3.3*(analogRead(A_INPUT_1)/4095.0);
+  //channel_B = 3.3*(analogRead(B_INPUT_1)/4095.0);
+  channel_A_2 = 3.3*(analogRead(A_INPUT_2)/4095.0);
 
-  Serial.print("Channel A: ");
+  Serial.print("Channel A #1: ");
   Serial.print(channel_A, 2);
-  Serial.print("Channel_B: ");
-  Serial.print(channel_B, 2);
+  //Serial.print("Channel_B: ");
+  //Serial.print(channel_B, 2);
+  Serial.print("Channel A #2: ");
+  Serial.print(channel_A_2, 2);
   Serial.println("-------------");
 
   
   channel_sel = 0b1;
-  write_msg = (channel_sel << 15) + (gain << 13) + (sdhn << 12) + dac_data;
+  write_msg = (channel_sel << 15) + (gain << 13) + (sdhn << 12) + dac2_data;
  
   vspi->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE0));
-  digitalWrite(vspi->pinSS(), LOW); //pull ss high to signify end of data transfer
+  //digitalWrite(vspi->pinSS(), LOW); //pull ss high to signify end of data transfer
+  digitalWrite(CS2, LOW);
   vspi->transfer16(write_msg);
-  digitalWrite(vspi->pinSS(), HIGH);
+  //digitalWrite(vspi->pinSS(), HIGH);
+  digitalWrite(CS2, HIGH);
   vspi->endTransaction();
   
-  dac_data += (1 << 10);
-  dac_data &= ~(0b1111 << 12);
 
-  digitalWrite(LDAC, LOW);
 
-  channel_A = 3.3*(analogRead(34)/4095.0);
-  channel_B = 3.3*(analogRead(35)/4095.0);
-  Serial.print("Channel A: ");
+  //digitalWrite(LDAC, LOW);
+
+   channel_A = 3.3*(analogRead(A_INPUT_1)/4095.0);
+  //channel_B = 3.3*(analogRead(B_INPUT_1)/4095.0);
+  channel_A_2 = 3.3*(analogRead(A_INPUT_2)/4095.0);
+
+  Serial.print("Channel A #1: ");
   Serial.print(channel_A, 2);
-  Serial.print("Channel_B: ");
-  Serial.print(channel_B, 2);
+  //Serial.print("Channel_B: ");
+  //Serial.print(channel_B, 2);
+  Serial.print("Channel A #2: ");
+  Serial.print(channel_A_2, 2);
   Serial.println("-------------");
 
+  dac1_data += (1 << 10);
+  dac1_data &= ~(0b1111 << 12);
+
+  dac2_data += (1 << 9);
+  dac2_data &= ~(0b1111 << 12);
   delay(1000);
 }
