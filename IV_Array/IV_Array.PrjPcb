@@ -16,7 +16,7 @@ AllowPortNetNames=0
 AllowSheetEntryNetNames=1
 AppendSheetNumberToLocalNets=0
 NetlistSinglePinNets=0
-DefaultConfiguration=Default Configuration
+DefaultConfiguration=
 UserID=0xFFFFFFFF
 DefaultPcbProtel=1
 DefaultPcbPcad=0
@@ -50,6 +50,9 @@ CrossRefFollowFromMainSettings=1
 [Preferences]
 PrefsVaultGUID=
 PrefsRevisionGUID=
+
+[Release]
+ReleaseTarget=3
 
 [Document1]
 DocumentPath=Top_Level.SchDoc
@@ -465,48 +468,34 @@ Name=SCH_REV
 Value=A
 
 [Configuration1]
-Name=Default Configuration
-ParameterCount=0
-ConstraintFileCount=0
-ReleaseItemId=
-Variant=[No Variations]
-OutputJobsCount=0
-ContentTypeGUID=B953ABBB-897D-493B-96D2-85DABE1896C4
-ConfigurationType=Custom
-
-[Configuration2]
 Name=Sources
 ParameterCount=0
 ConstraintFileCount=0
-ReleaseItemId=
+ReleaseItemId=FF1A3126-2DA1-452A-9B94-03BAB0115B6C
 Variant=[No Variations]
 OutputJobsCount=1
 DocumentReferenceClass1=DocumentReference
-OutputJobFileName1=
+OutputJobFileName1=4 Layer PCBWay ALL.OutJob
 ContentTypeGUID=CB6F2064-E317-11DF-B822-12313F0024A2
 ConfigurationType=Source
 
-[Configuration3]
+[Configuration2]
 Name=Fabrication
 ParameterCount=0
 ConstraintFileCount=0
 ReleaseItemId=
 Variant=[No Variations]
-OutputJobsCount=1
-DocumentReferenceClass1=DocumentReference
-OutputJobFileName1=
+OutputJobsCount=0
 ContentTypeGUID=0C520D2A-E60C-11DF-B822-12313F0024A2
 ConfigurationType=Fabrication
 
-[Configuration4]
+[Configuration3]
 Name=Assembly
 ParameterCount=0
 ConstraintFileCount=0
 ReleaseItemId=
 Variant=[No Variations]
-OutputJobsCount=1
-DocumentReferenceClass1=DocumentReference
-OutputJobFileName1=
+OutputJobsCount=0
 ContentTypeGUID=0D12F8DC-E60C-11DF-B822-12313F0024A2
 ConfigurationType=Assembly
 
