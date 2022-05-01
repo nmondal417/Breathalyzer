@@ -1,0 +1,10 @@
+Output: Report Board Stack
+Type  : Report Board Stack
+From  : PCB Document [PCB1.PcbDoc]
+   Generated File[PCB1.xls]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 3:51:54 PM On 5/1/2022

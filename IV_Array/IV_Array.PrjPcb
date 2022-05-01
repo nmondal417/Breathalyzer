@@ -16,7 +16,7 @@ AllowPortNetNames=0
 AllowSheetEntryNetNames=1
 AppendSheetNumberToLocalNets=0
 NetlistSinglePinNets=0
-DefaultConfiguration=
+DefaultConfiguration=Sources
 UserID=0xFFFFFFFF
 DefaultPcbProtel=1
 DefaultPcbPcad=0
@@ -259,7 +259,7 @@ GenerateClassCluster=0
 DocumentUniqueId=HGUIVOFB
 
 [Document13]
-DocumentPath=Project Outputs\4 Layer PCBWay ALL.OutJob
+DocumentPath=4 Layer PCBWay ALL.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -473,9 +473,7 @@ ParameterCount=0
 ConstraintFileCount=0
 ReleaseItemId=FF1A3126-2DA1-452A-9B94-03BAB0115B6C
 Variant=[No Variations]
-OutputJobsCount=1
-DocumentReferenceClass1=DocumentReference
-OutputJobFileName1=4 Layer PCBWay ALL.OutJob
+OutputJobsCount=0
 ContentTypeGUID=CB6F2064-E317-11DF-B822-12313F0024A2
 ConfigurationType=Source
 

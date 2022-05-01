@@ -1,0 +1,15 @@
+Altium Designer Pick and Place Locations
+C:\college\UROP_S2022\IV_Array\Large_Connector_Interface\Project Outputs\Pick Place\Pick Place for PCB1.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       01/05/22
+Time:       15:51
+Revision:   4b83f298796d76001340c7750ecd63fb13be487c
+Variant:    No variations
+Units used: mil
+
+Designator Comment             Layer    Footprint                 Center-X(mil) Center-Y(mil) Rotation Description                        Height(mil) 
+J2         FH28H-80S-0.5SH(05) TopLayer FP-FH28H-80S-0_5SH_05-MFG 2492.488      1201.001      270      "CONN FFC BOTTOM 80POS 0.50MM R/A" 0.000       
+J1         FH28H-80S-0.5SH(05) TopLayer FP-FH28H-80S-0_5SH_05-MFG 1734.513      1201.001      90       "CONN FFC BOTTOM 80POS 0.50MM R/A" 0.000       
