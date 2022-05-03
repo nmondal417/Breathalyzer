@@ -5,7 +5,7 @@ C:\college\UROP_S2022\IV_Array\Project Outputs\Pick Place\Pick Place for PCB1.tx
 File Design Information:
 
 Date:       02/05/22
-Time:       00:32
+Time:       16:57
 Revision:   4b83f298796d76001340c7750ecd63fb13be487c
 Variant:    No variations
 Units used: mil

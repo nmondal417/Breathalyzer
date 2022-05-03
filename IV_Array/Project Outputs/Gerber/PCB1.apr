@@ -83,7 +83,7 @@ D96   RECTANGULAR        59.055      59.055       0.000 FLASH     180.000
 D97   ROUNDED            59.055      59.055       0.000 FLASH       0.000
 D98   RECTANGULAR        59.055      59.055       0.000 FLASH      90.000
 D99   ROUNDED            75.000      75.000       0.000 FLASH       0.000
-D100  ROUNDED            20.000      20.000       0.000 FLASH       0.000
+D100  ROUNDED            24.000      24.000       0.000 FLASH       0.000
 D101  ROUNDED            28.000      28.000       0.000 FLASH       0.000
 D102  ROUNDED            40.000      40.000       0.000  LINE       0.000
 D103  RELIEF             95.433      95.433       0.000 FLASH      10.000      10.000 4       0.000
