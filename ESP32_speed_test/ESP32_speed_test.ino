@@ -1,3 +1,6 @@
+//test to see how long digitalWrites take on ESP32
+//answer is that it is much faster than Arduinos
+
 unsigned long NUM_CYCLES = 1000000;
 
 void setup() {

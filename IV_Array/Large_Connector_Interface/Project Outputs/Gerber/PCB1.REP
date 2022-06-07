@@ -2,45 +2,14 @@
 FileName = PCB1.GBR
 AutoAperture = True
 *************************************************************
-Generating : Board
-      File : PCB1.GM1
+Generating : Top Courtyard
+      File : PCB1.GM15
 
-    Adding Layer      : Board
-
-
-Used DCodes :
-    D12
-*************************************************************
-
-*************************************************************
-Generating : Top Paste
-      File : PCB1.GTP
-
-    Adding Layer      : Top Paste
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
+    Adding Layer      : Top Courtyard
 
 
 Used DCodes :
-    D14
-    D15
-    D16
-    D17
-    D18
-*************************************************************
-
-*************************************************************
-Generating : Bottom Pad Master
-      File : PCB1.GPB
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
+    D11
 *************************************************************
 
 *************************************************************
@@ -55,30 +24,24 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Top Solder
-      File : PCB1.GTS
+Generating : Board
+      File : PCB1.GM1
 
-    Adding Layer      : Top Solder
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
+    Adding Layer      : Board
 
 
 Used DCodes :
-    D18
-    D19
+    D12
 *************************************************************
 
 *************************************************************
-Generating : Top Courtyard
-      File : PCB1.GM15
+Generating : Keep-Out Layer
+      File : PCB1.GKO
 
-    Adding Layer      : Top Courtyard
+    Adding Layer      : Keep-Out Layer
 
 
 Used DCodes :
-    D11
 *************************************************************
 
 *************************************************************
@@ -89,34 +52,6 @@ Generating : Bottom Overlay
 
 
 Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Top Overlay
-      File : PCB1.GTO
-
-    Adding Layer      : Top Overlay
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-*************************************************************
-
-*************************************************************
-Generating : Top Pad Master
-      File : PCB1.GPT
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D18
-    D19
 *************************************************************
 
 *************************************************************
@@ -145,16 +80,85 @@ Generating : Bottom Solder
 
 
 Used DCodes :
+    D20
 *************************************************************
 
 *************************************************************
-Generating : Keep-Out Layer
-      File : PCB1.GKO
+Generating : Top Solder
+      File : PCB1.GTS
 
-    Adding Layer      : Keep-Out Layer
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
 
 
 Used DCodes :
+    D18
+    D19
+    D20
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : PCB1.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D15
+    D16
+    D17
+    D18
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : PCB1.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : PCB1.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D18
+    D19
+    D21
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : PCB1.GPB
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D21
 *************************************************************
 
 *************************************************************
@@ -167,6 +171,7 @@ Generating : Bottom Layer
 
 
 Used DCodes :
+    D21
 *************************************************************
 
 *************************************************************
@@ -182,5 +187,6 @@ Used DCodes :
     D12
     D18
     D19
+    D21
 *************************************************************
 

@@ -11,11 +11,12 @@ SPIClass * hspi = NULL;
 #define VSPI_MISO   MISO
 #define VSPI_MOSI   MOSI
 #define VSPI_SCLK   SCK
-#define VSPI_SS     SS
+//#define VSPI_SS     SS
 #define LDAC        22
 #define A_INPUT_1   15
 #define B_INPUT_1   34
 #define A_INPUT_2   4
+#define CS1         5
 #define CS2         2
 
 #if CONFIG_IDF_TARGET_ESP32S2
@@ -41,10 +42,11 @@ void setup() {
   vspi = new SPIClass(VSPI);
   
   vspi->begin();
-  pinMode(vspi->pinSS(), OUTPUT); //VSPI SS
+  //pinMode(vspi->pinSS(), OUTPUT); //VSPI SS
   pinMode(CS2, OUTPUT);
   digitalWrite(CS2, HIGH);
-
+  pinMode(CS1, OUTPUT);
+  digitalWrite(CS1, HIGH);
 
   channel_sel = 0b0;
   gain = 0b1;
@@ -74,14 +76,16 @@ void setup() {
 }
 
 void loop() {
-  //digitalWrite(LDAC, HIGH);
+  digitalWrite(LDAC, HIGH);
   channel_sel = 0b0;
   write_msg = (channel_sel << 15) + (gain << 13) + (sdhn << 12) + dac1_data;
   
   vspi->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE0));
-  digitalWrite(vspi->pinSS(), LOW); //pull SS low to prep other end for transfer
+  //digitalWrite(vspi->pinSS(), LOW); //pull SS low to prep other end for transfer
+  digitalWrite(CS1, LOW);
   vspi->transfer16(write_msg);
-  digitalWrite(vspi->pinSS(), HIGH);
+  //digitalWrite(vspi->pinSS(), HIGH);
+  digitalWrite(CS1, HIGH);
   vspi->endTransaction();
 
   channel_A = 3.3*(analogRead(A_INPUT_1)/4095.0);
@@ -97,7 +101,7 @@ void loop() {
   Serial.println("-------------");
 
   
-  channel_sel = 0b1;
+  channel_sel = 0b0;
   write_msg = (channel_sel << 15) + (gain << 13) + (sdhn << 12) + dac2_data;
  
   vspi->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE0));
@@ -110,7 +114,7 @@ void loop() {
   
 
 
-  //digitalWrite(LDAC, LOW);
+  digitalWrite(LDAC, LOW);
 
    channel_A = 3.3*(analogRead(A_INPUT_1)/4095.0);
   //channel_B = 3.3*(analogRead(B_INPUT_1)/4095.0);
@@ -129,5 +133,5 @@ void loop() {
 
   dac2_data += (1 << 9);
   dac2_data &= ~(0b1111 << 12);
-  delay(1000);
+  delay(2000);
 }

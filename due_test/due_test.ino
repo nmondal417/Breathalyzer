@@ -1,3 +1,5 @@
+//test to see the speed of different methods of writing to Arduino Due pins
+
 int NUM_CYCLES = 1000000;
 
 void setup() {
