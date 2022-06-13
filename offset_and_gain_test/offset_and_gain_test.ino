@@ -87,7 +87,7 @@ void setup() {
 
 void loop() {
   for (int dac = 0; dac < 8; dac++) {
-    writeDac(dac, 2048);
+    writeDac(dac, 0);
   }
   ldac_pulse();
   delay(10);
