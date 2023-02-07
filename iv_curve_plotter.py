@@ -25,10 +25,9 @@ import numpy as np
 import serial
 import time as timer
 
-s = serial.Serial(port='/dev/cu.usbmodem14101', baudrate=115200)# Arduino DUE
+s = serial.Serial(port='COM5', baudrate=115200)# Arduino DUE
 #s = serial.Serial(port='/dev/cu.usbmodem14201', baudrate=115200) #right-side USB
 #s = serial.Serial(port='/dev/cu.usbmodem1411', baudrate=230400)	# Arduino DUE
-
 
 GAIN = 1000
 FONTSIZE = 20           # fontsize for plotss
@@ -53,11 +52,13 @@ def get_data(time, VDS, VGS, VMID, data, R, string):
 		data = np.fromstring(string, dtype=float, sep=',')		# string to array
 		time = data[0]
 		VDS = data[1]
-		VGS = data[2:7]
-		data = data[8:]
+		VGS = data[2]
+		VMID = data[3]
+		data = data[4:]
 		data = data/GAIN
 		data = data.reshape(256,1)							# reshape array to 16 x 16
 		VDS_array = np.ones((256,1))*VDS
+		VMID = 1
 		#R = np.true_divide(VDS_array,data)
 		R = 0
 	return [time, VDS, VGS, VMID, data, R, string]
@@ -109,7 +110,9 @@ def run():
 
 			if(RECORD):
 				
-
+				print(VDS)
+				print(VGS)
+				print(VMID)
 				print("VDS = %0.2f mV,  VGS = %0.2f  mV,  VMID_bin = %0.2f bits" %(1e3*VDS, 1e3*VGS, VMID))
 
 				time_stamps = np.append(time_stamps,time)

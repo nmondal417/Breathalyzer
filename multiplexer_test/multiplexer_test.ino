@@ -135,7 +135,7 @@ void loop() {
     Serial.println("Expected Current: " + String((vds - 1.0)/test_resistor*1000, 4) + " mA");
 
     
-    multiplexer(31, 0);
+    multiplexer(11, 0);
     multiplexer(31, 1);
 
 

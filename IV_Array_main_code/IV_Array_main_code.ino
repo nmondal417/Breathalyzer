@@ -9,43 +9,43 @@
 //uninitalised pointers to SPI objects
 SPIClass * vspi = NULL;
 
-static const unsigned long spiClk = 4000000; 
+static const unsigned long spiClk = 800000;  //SPI clock frequency
 
 //ADC and DAC pins
 const int dacSelectPin = 5;    //slave select for DAC
 const int adcSelectPin = 2;    //slave select for ADC
 const int ldac = 4;            //pulse LDAC low to update DAC outputs all at once
-const int vgs_dac_channels [6] = {0, 1, 2, 3, 5, 6};   //address bits for gates 1-6 of the DAC
+const int vgs_dac_channels [6] = {0, 1, 2, 3, 5, 6};   //DAC channels for gates 1-6
+const int vds_dac_channel = 4;   //DAC channel for drain
 
-
+//gate voltage amplification
 const float amps [3] = {1, 10.1, 20.1};             //amplification choices for each gate
 const int desired_amps [6] = {0, 0, 0, 0, 0, 0};    //0 for x1, 1 for x10, 2 for x20
 //NOTE: changing the values in desired_amps will not actually change the gate amplification, only the print output 
 //is changed. The jumpers on the board determine the amplification for each gate.
-const int vds_dac_channel = 4;
 
 //sweep parameters
-float VGS_SWEEP_RATE = 10;  //VGS sweep rate in ms
-float VDS_HOLD = 1000;       //VDS_hold at beginning of sweep
-int numReadings = 100;  //number of readings taken for each FET in the array
+float VGS_SWEEP_RATE = 0;  //VGS sweep rate in ms
+float VDS_HOLD = 0;       //VDS_hold at beginning of sweep
+int numReadings = 10;  //number of readings taken for each FET in the array
+int numDummy = 10;
 float VMID = 1;               //offset voltage for VGS and VDS
 
-//Vgs parameterws for gates 1 through 6
-float VGS_START [6] = {-1, -1, -1, -1, -1, -1};       
-float VGS_STOP [6] = {1, 1, 1, 1, 1, 1};
-float VGS_INC [6] = {50e-2, 50e-2, 50e-2, 50e-2, 50e-2, 50e-2};
+//Vgs parameters for gates 1 through 6
+float VGS_START [6] = {-0.5, -0.5, -0.5, -0.5, -0.5, -0.5};       
+float VGS_STOP [6] = {0.5, 0.5, 0.5, 0.5, 0.5, 0.5};
+float VGS_INC [6] = {10e-3, 10e-3, 10e-3, 10e-3, 10e-3, 10e-3};
 float VGS_OFFSETS [6] = {0, 0, 0, 0, 9e-3, 9e-3};  //positive offset means the DAC outputs a higher-than-expected value
 float vgs [6];
+int vgs_bin [6];  //VGS as a value from 0 to 4095
 
-int vgs_bin [6];
-
-const float VDS_START = 0e-3;
-const float VDS_STOP = 300e-3;
-const float VDS_INC = 2.5e-2;
+//Vds parameters
+const float VDS_START = 900e-3;
+const float VDS_STOP = 900e-3;
+const float VDS_INC = 5e-3;
 float VDS_OFFSET = 19e-3; //positive offset means the DAC outputs a higher-than-expected value
 float vds;
-int vds_bin;
-
+int vds_bin;   //VDS as a value from 0 to 4095 (0V = 0, 2V = 4095)
 
 //source and drain mux pins
 int drain_sel [5] = {12, 13, 14, 15, 16};   //pin 12 is the LSB, pin 16 is the MSB
@@ -57,12 +57,21 @@ const bool big_chip = 1;   //true if large chip is being used (6 gates, 32 sourc
 
 String message;    //Serial print message
 
+unsigned long t1;
+double t2;
+unsigned long t3;
+
+int powers_of_two [5] = {1, 2, 4, 8, 16};
+
 void setup() {
-  vspi = new SPIClass(VSPI);
+  t1 = millis();
+  t3 = millis();
+  vspi = new SPIClass(VSPI);  //begin SPI
   vspi->begin();
-  
+  //vspi->begin(VSPI_SCLK, VSPI_MISO, VSPI_MOSI, VSPI_SS);
+  //pinMode(vspi->pinSS(), OUTPUT);
   Serial.begin(115200); //begin serial comms
-  delay(100); //wait a bit (100 ms)
+  delay(1000); //wait a bit (100 ms)
 
   pinMode(ldac, OUTPUT);
   pinMode(dacSelectPin, OUTPUT);
@@ -74,7 +83,7 @@ void setup() {
     pinMode(source_sel[i], OUTPUT);
   }
   
-  digitalWrite(ldac, HIGH);
+  digitalWrite(ldac, HIGH);          //initialize DAC and ADC control pins
   digitalWrite(dacSelectPin, HIGH);
   digitalWrite(adcSelectPin, HIGH);
   digitalWrite(drain_en, LOW);  //enable the drain demultiplexer
@@ -89,52 +98,19 @@ void setup() {
 }
 
 void loop() {
-
-  /*
-  delay(5000);
-  int bin = v_to_bin(-1.05);
-  float voltage = bin_to_v(bin);
-  Serial.println(bin);
-  Serial.println(voltage);
-  Serial.println();
-
-  bin = v_to_bin(-1);
-  voltage = bin_to_v(bin);
-  Serial.println(bin);
-  Serial.println(voltage);
-  Serial.println();
-
-  bin = v_to_bin(0);
-  voltage = bin_to_v(bin);
-  Serial.println(bin);
-  Serial.println(voltage);
-  Serial.println();
-
-  bin = v_to_bin(1);
-  voltage = bin_to_v(bin);
-  Serial.println(bin);
-  Serial.println(voltage);
-  Serial.println();
-
-  bin = v_to_bin(1.04);
-  voltage = bin_to_v(bin);
-  Serial.println(bin);
-  Serial.println(voltage);
-  Serial.println();
-  */
-
   
   int i = 0;
   int j = 0;
   for(vgs[0] = VGS_START[0]; vgs[0] <= VGS_STOP[0]+0.5*VGS_INC[0]; vgs[0] = vgs[0] + VGS_INC[0]) {i++;} // determining data array size for exporting
   for(vds = VDS_START; vds <= VDS_STOP+0.5*VDS_INC; vds = vds + VDS_INC) {j++;}
-  Serial.println("256," + String(i) + "," + String(j));
-  
+  Serial.print("256," + String(i) + "," + String(j));
+
+  //outer loop for Vds sweep, inner loop for Vgs sweep
   for(vds = VDS_START; vds <= VDS_STOP+0.5*VDS_INC; vds = vds + VDS_INC) {    // added 0.5*VDS_INC just in case VDS is not exactly precise and the loop terminates early
     
-    vds_bin = v_to_bin(vds - VDS_OFFSET);                                                    // convert desired voltage into appropriate binary value
+    vds_bin = v_to_bin(vds - VDS_OFFSET);  // convert desired voltage into appropriate binary value (0 to 4095)
     writeDac(vds_dac_channel, vds_bin);
-    ldac_pulse();
+    ldac_pulse();                         //update DAC output
 
     for (int gate = 0; gate < 6; gate++) {
       vgs[gate] = VGS_START[gate];
@@ -143,7 +119,7 @@ void loop() {
     while(vgs[0] <= VGS_STOP[0]+0.5*VGS_INC[0]) {  // added 0.5*VGS_INC just in case VGS is not exactly precise and the loop terminates early
 
       for (int gate = 0; gate < 6; gate++) {
-        vgs_bin[gate] = v_to_bin(vgs[gate] - VGS_OFFSETS[gate]);                                       // convert desired voltage into appropriate binary value
+        vgs_bin[gate] = v_to_bin(vgs[gate] - VGS_OFFSETS[gate]);             // convert desired voltage into appropriate binary value (0 to 4095)
         writeDac(vgs_dac_channels[gate], vgs_bin[gate]);                    // write DAC value to 1 of the 6 gates
       }
       
@@ -166,13 +142,17 @@ void loop() {
 }
 
 String sweep(float vds, float* vgs) {
-  unsigned long t1;
+  
   int vmeas_bin_avg = 0;
   int vmeas_bin = 0;
   
-  t1 = millis();
+  
   String message = "";
+  t1 = millis() - t1;
   message += String(t1);
+  //message += ",";
+  //message += String(t2);
+  t1 = millis();
   message += ",";
   message += String(vds,4);                        // gives VDS with 4 decimals of precision
   message += ",";
@@ -180,7 +160,12 @@ String sweep(float vds, float* vgs) {
     float vgs_amped = vgs[gate]*amps[desired_amps[gate]];
     message += String(vgs_amped,4);                        // gives VGS with 4 decimals of precision
     message += ",";
+    break;   //only once for now
   }
+  
+  message += String(VMID);
+  message += ",";
+  
   
 
   int multiplexer_max = big_chip ? 32 : 16;        //if big chip is being used, there are 32 drains/sources; small chip only has 16
@@ -189,16 +174,22 @@ String sweep(float vds, float* vgs) {
     for (int vmeas_select = 0; vmeas_select < multiplexer_max; vmeas_select++) {      
       multiplexer(vds_select, 0);
       multiplexer(vmeas_select, 1);
+      //delay(1);
       
       vmeas_bin_avg = 0;
       
-      if(vds_select == 0 && vmeas_select == 0) {readAdc();}               // if it is the first read in a sweep, do a dummy read to give ADC caps some time to settle to proper value
-      
+      for (int i = 0; i < numDummy; i++) {
+        readAdc();    // if it is the first read in a sweep, do a dummy read to give ADC caps some time to settle to proper value
+      }  
+      //t2 = 0;
+      //t3 = micros();
       for (int i = 0; i < numReadings; i++) { 
         vmeas_bin = readAdc();
         vmeas_bin_avg += vmeas_bin; 
       }
-      vmeas_bin_avg = round(vmeas_bin_avg / numReadings);
+      //t3 = micros() - t3;
+      //t2 += t3/1000.0;
+      vmeas_bin_avg = vmeas_bin_avg / numReadings;
       float vmeas_avg = bin_to_v(vmeas_bin_avg);
       message += String(vmeas_avg, 4);                           
       message += ",";
@@ -209,15 +200,17 @@ String sweep(float vds, float* vgs) {
   return message;
 }
 
+//Note: The DAC (AD5328) operates in SPI Mode 1 (data is sampled on the falling edge of the clock)
 void setupDac() {
-  vspi->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE0));
+
+  vspi->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE1));
   digitalWrite(dacSelectPin, LOW);
   vspi->transfer16(0b1 << 15);   //set up DAC with gain of 1, unbuffered on all channels
   digitalWrite(dacSelectPin, HIGH);
   vspi->endTransaction();
 
 
-  vspi->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE0));
+  vspi->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE1));
   digitalWrite(dacSelectPin, LOW);
   vspi->transfer16(0b1010000000000001);   //set up DAC with with LDAC high (default mode, so not needed), DAC outputs will not update until LDAC is pulsed low
   digitalWrite(dacSelectPin, HIGH);
@@ -225,14 +218,16 @@ void setupDac() {
   
 }
 
+//Note: The DAC (AD5328) operates in SPI Mode 1 (data is sampled on the falling edge of the clock)
 void writeDac(unsigned int chan, unsigned int val) {
-  vspi->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE0));
+  vspi->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE1));
   digitalWrite(dacSelectPin, LOW);
   vspi->transfer16(((0b111 & chan) << 12) + val);   //bits 14 through 12 for channel select, lower 12 bits for DAC data
   digitalWrite(dacSelectPin, HIGH);
   vspi->endTransaction();
 }
 
+//Note: The ADC (MCP3201) operates in SPI Mode 0 (data is sampled on the rising edge of the clock)
 float readAdc() {
   word adc_stream;
   vspi->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE0));
@@ -248,6 +243,7 @@ void ldac_pulse() { //used to update DAC output
   digitalWrite(ldac, HIGH);
 }
 
+//converts a Vds or Vgs voltage from -1 to 1V to an integer from 0 to 4095
 int v_to_bin(float voltage) {
   int bin;
   voltage = voltage + VMID;
@@ -256,14 +252,15 @@ int v_to_bin(float voltage) {
   return bin;
 }
 
+//converts an integer from 0 to 4095 to a voltage from -1 to 1V
 float bin_to_v(int bin) {
   float voltage;
-  voltage = (bin / 4096.0 * 2*VMID) - 1;
+  voltage = (bin / 4096.0 * 2*VMID) - VMID;
   voltage = min(max(-VMID, voltage), VMID); 
   return voltage;
 }
 
-//gate_or_source: 0 if drain, 1 if source
+//drain_or_source: 0 if drain, 1 if source
 //channels are 0-indexed
 void multiplexer(int address, bool drain_or_source) {
   int *select_bits;
@@ -275,9 +272,9 @@ void multiplexer(int address, bool drain_or_source) {
   }
 
   for (int i = 4; i >= 0; i--) {
-    if (address >= pow(2, i)) {
+    if (address >= powers_of_two[i]) {
       digitalWrite(select_bits[i], HIGH);
-      address -= pow(2, i); 
+      address -= powers_of_two[i]; 
     }
     else {
       digitalWrite(select_bits[i], LOW);

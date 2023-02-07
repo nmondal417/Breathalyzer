@@ -1,0 +1,6 @@
+Record=DiagramHierarchy|SourceDocument=Schematic.MbsDoc|Kind=Multi-board Schematic Module|Designator=1|Source=..\Breathalyzer_ESP32\Breathalyzer_ESP32.PrjPcb
+Record=SubProject|SourceDocument=Schematic.MbsDoc|ProjectPath=..\Breathalyzer_ESP32\Breathalyzer_ESP32.PrjPcb
+Record=DiagramHierarchy|SourceDocument=Schematic.MbsDoc|Kind=Multi-board Schematic Module|Designator=3|Source=..\Breathalyzer_Mux+Conn\Breathalyzer_Mux+Conn.PrjPcb
+Record=SubProject|SourceDocument=Schematic.MbsDoc|ProjectPath=..\Breathalyzer_Mux+Conn\Breathalyzer_Mux+Conn.PrjPcb
+Record=DiagramHierarchy|SourceDocument=Schematic.MbsDoc|Kind=Multi-board Schematic Module|Designator=2|Source=..\Breathalyzer_Power+ICs\Breathalyzer_Power+ICs.PrjPcb
+Record=SubProject|SourceDocument=Schematic.MbsDoc|ProjectPath=..\Breathalyzer_Power+ICs\Breathalyzer_Power+ICs.PrjPcb

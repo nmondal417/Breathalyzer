@@ -20,7 +20,7 @@ const int ldac = 4;
 const int adc_esp = 15;
 const int dac_esp = 26;
 
-const float test_resistor = 2200;  //resistor used to test transimpedance amp; placed between drain and source voltages
+const float test_resistor = 1000;  //resistor used to test transimpedance amp; placed between drain and source voltages
 
 
 void setupDac() {
@@ -91,7 +91,7 @@ void setup() {
 void loop() {
   for (int i = 0; i <= 10; i++) {
 
-    int vds_bin = 500+ 200 * i;  //sweep Vds from 0V to 1V (offset by 1V since source voltage is 1V)
+    int vds_bin = 50+ 400 * i;  //sweep Vds from 0V to 1V (offset by 1V since source voltage is 1V)
     float vds = vds_bin/4096.0*2.0;
     
     writeDac(4, vds_bin - 35);  //channel 4 is for Vds raw, offset of about 10 mV
@@ -101,7 +101,7 @@ void loop() {
     Serial.println("Expected Current: " + String((vds - 1.0)/test_resistor*1000, 4) + " mA");
     delay(1000);
     float transimp_out = readAdc()/4096.0 * 2.0;
-    //Serial.println("ADC voltage reading: " + String(readAdc()/4096.0 * 2.0, 4));
+    Serial.println("ADC voltage reading: " + String(readAdc()/4096.0 * 2.0, 4));
     Serial.println("Measured Current: " + String((1.0 - transimp_out), 4) + " mA");
 /*
     float transimp_esp = analogRead(adc_esp)/4096.0*3.3;
