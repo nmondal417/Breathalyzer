@@ -27,8 +27,8 @@ const int desired_amps [6] = {0, 0, 0, 0, 0, 0};    //0 for x1, 1 for x10, 2 for
 //sweep parameters
 float VGS_SWEEP_RATE = 0;  //VGS sweep rate in ms
 float VDS_HOLD = 0;       //VDS_hold at beginning of sweep
-int numReadings = 10;  //number of readings taken for each FET in the array
-int numDummy = 10;
+int numReadings = 100;  //number of readings taken for each FET in the array
+int numDummy = 5;     //number of dummy reads done beforehand
 float VMID = 1;               //offset voltage for VGS and VDS
 
 //Vgs parameters for gates 1 through 6
@@ -58,18 +58,13 @@ const bool big_chip = 1;   //true if large chip is being used (6 gates, 32 sourc
 String message;    //Serial print message
 
 unsigned long t1;
-double t2;
-unsigned long t3;
 
 int powers_of_two [5] = {1, 2, 4, 8, 16};
 
 void setup() {
   t1 = millis();
-  t3 = millis();
   vspi = new SPIClass(VSPI);  //begin SPI
   vspi->begin();
-  //vspi->begin(VSPI_SCLK, VSPI_MISO, VSPI_MOSI, VSPI_SS);
-  //pinMode(vspi->pinSS(), OUTPUT);
   Serial.begin(115200); //begin serial comms
   delay(1000); //wait a bit (100 ms)
 
@@ -148,11 +143,9 @@ String sweep(float vds, float* vgs) {
   
   
   String message = "";
-  t1 = millis() - t1;
-  message += String(t1);
-  //message += ",";
-  //message += String(t2);
   t1 = millis();
+  message += String(t1);
+  
   message += ",";
   message += String(vds,4);                        // gives VDS with 4 decimals of precision
   message += ",";
@@ -174,24 +167,22 @@ String sweep(float vds, float* vgs) {
     for (int vmeas_select = 0; vmeas_select < multiplexer_max; vmeas_select++) {      
       multiplexer(vds_select, 0);
       multiplexer(vmeas_select, 1);
-      //delay(1);
       
       vmeas_bin_avg = 0;
       
       for (int i = 0; i < numDummy; i++) {
-        readAdc();    // if it is the first read in a sweep, do a dummy read to give ADC caps some time to settle to proper value
+        readAdc();   
       }  
-      //t2 = 0;
-      //t3 = micros();
+
       for (int i = 0; i < numReadings; i++) { 
         vmeas_bin = readAdc();
         vmeas_bin_avg += vmeas_bin; 
       }
-      //t3 = micros() - t3;
-      //t2 += t3/1000.0;
+      
       vmeas_bin_avg = vmeas_bin_avg / numReadings;
-      float vmeas_avg = bin_to_v(vmeas_bin_avg);
-      message += String(vmeas_avg, 4);                           
+      message += String(vmeas_bin_avg);
+      //float vmeas_avg = bin_to_v(vmeas_bin_avg);
+      //message += String(vmeas_avg, 4);                           
       message += ",";
     }
   }
