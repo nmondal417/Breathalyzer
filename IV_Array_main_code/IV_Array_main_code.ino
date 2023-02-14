@@ -36,7 +36,7 @@ float VGS_START [6] = {-0.5, -0.5, -0.5, -0.5, -0.5, -0.5};
 float VGS_STOP [6] = {0.5, 0.5, 0.5, 0.5, 0.5, 0.5};
 float VGS_INC [6] = {10e-3, 10e-3, 10e-3, 10e-3, 10e-3, 10e-3};
 float VGS_OFFSETS [6] = {0, 0, 0, 0, 9e-3, 9e-3};  //positive offset means the DAC outputs a higher-than-expected value
-float vgs [6];
+float vgs [6];    //VGS as a value from -1 to 1V
 int vgs_bin [6];  //VGS as a value from 0 to 4095
 
 //Vds parameters
@@ -44,7 +44,7 @@ const float VDS_START = 900e-3;
 const float VDS_STOP = 900e-3;
 const float VDS_INC = 5e-3;
 float VDS_OFFSET = 19e-3; //positive offset means the DAC outputs a higher-than-expected value
-float vds;
+float vds;     //VDS as a value from -1 to 1V
 int vds_bin;   //VDS as a value from 0 to 4095 (0V = 0, 2V = 4095)
 
 //source and drain mux pins
@@ -57,16 +57,14 @@ const bool big_chip = 1;   //true if large chip is being used (6 gates, 32 sourc
 
 String message;    //Serial print message
 
-unsigned long t1;
-
 int powers_of_two [5] = {1, 2, 4, 8, 16};
 
 void setup() {
-  t1 = millis();
-  vspi = new SPIClass(VSPI);  //begin SPI
+  vspi = new SPIClass(VSPI);
   vspi->begin();
+  
   Serial.begin(115200); //begin serial comms
-  delay(1000); //wait a bit (100 ms)
+  delay(1000); //wait a bit (1000 ms)
 
   pinMode(ldac, OUTPUT);
   pinMode(dacSelectPin, OUTPUT);
@@ -98,7 +96,7 @@ void loop() {
   int j = 0;
   for(vgs[0] = VGS_START[0]; vgs[0] <= VGS_STOP[0]+0.5*VGS_INC[0]; vgs[0] = vgs[0] + VGS_INC[0]) {i++;} // determining data array size for exporting
   for(vds = VDS_START; vds <= VDS_STOP+0.5*VDS_INC; vds = vds + VDS_INC) {j++;}
-  Serial.print("256," + String(i) + "," + String(j));
+  Serial.println("256," + String(i) + "," + String(j));
 
   //outer loop for Vds sweep, inner loop for Vgs sweep
   for(vds = VDS_START; vds <= VDS_STOP+0.5*VDS_INC; vds = vds + VDS_INC) {    // added 0.5*VDS_INC just in case VDS is not exactly precise and the loop terminates early
@@ -137,18 +135,19 @@ void loop() {
 }
 
 String sweep(float vds, float* vgs) {
-  
+  unsigned long t1;
   int vmeas_bin_avg = 0;
   int vmeas_bin = 0;
-  
-  
+    
   String message = "";
+
   t1 = millis();
   message += String(t1);
   
   message += ",";
   message += String(vds,4);                        // gives VDS with 4 decimals of precision
   message += ",";
+
   for (int gate = 0; gate < 6; gate++) {
     float vgs_amped = vgs[gate]*amps[desired_amps[gate]];
     message += String(vgs_amped,4);                        // gives VGS with 4 decimals of precision
@@ -159,8 +158,6 @@ String sweep(float vds, float* vgs) {
   message += String(VMID);
   message += ",";
   
-  
-
   int multiplexer_max = big_chip ? 32 : 16;        //if big chip is being used, there are 32 drains/sources; small chip only has 16
   
   for (int vds_select = 0; vds_select < multiplexer_max; vds_select++) {   
@@ -170,19 +167,24 @@ String sweep(float vds, float* vgs) {
       
       vmeas_bin_avg = 0;
       
-      for (int i = 0; i < numDummy; i++) {
+      for (int i = 0; i < numDummy; i++) { //perform some dummy reads to let the currents settle
         readAdc();   
       }  
 
-      for (int i = 0; i < numReadings; i++) { 
+      for (int i = 0; i < numReadings; i++) { //actual readings
         vmeas_bin = readAdc();
         vmeas_bin_avg += vmeas_bin; 
       }
       
       vmeas_bin_avg = vmeas_bin_avg / numReadings;
+
+      //for 0 to 4095 integer output
       message += String(vmeas_bin_avg);
+
+      //for -1 to 1 float output
       //float vmeas_avg = bin_to_v(vmeas_bin_avg);
-      //message += String(vmeas_avg, 4);                           
+      //message += String(vmeas_avg, 4);
+
       message += ",";
     }
   }
@@ -206,7 +208,6 @@ void setupDac() {
   vspi->transfer16(0b1010000000000001);   //set up DAC with with LDAC high (default mode, so not needed), DAC outputs will not update until LDAC is pulsed low
   digitalWrite(dacSelectPin, HIGH);
   vspi->endTransaction();
-  
 }
 
 //Note: The DAC (AD5328) operates in SPI Mode 1 (data is sampled on the falling edge of the clock)
