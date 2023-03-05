@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <SPI.h>
 #include <string.h>
 
@@ -5,6 +6,17 @@
 #define VSPI_MISO   MISO
 #define VSPI_MOSI   MOSI
 #define VSPI_SCLK   SCK
+
+//function definitions
+String sweep(float vds, float* vgs);
+void setupDac();
+void writeDac(unsigned int chan, unsigned int val);
+float readAdc();
+void ldac_pulse();
+int v_to_bin(float voltage);
+float bin_to_v(int bin);
+void multiplexer(int address, bool drain_or_source);
+void copy(float* src, float* dst, int len);
 
 //uninitalised pointers to SPI objects
 SPIClass * vspi = NULL;
@@ -40,8 +52,8 @@ float vgs [6];    //VGS as a value from -1 to 1V
 int vgs_bin [6];  //VGS as a value from 0 to 4095
 
 //Vds parameters
-const float VDS_START = 900e-3;
-const float VDS_STOP = 900e-3;
+const float VDS_START = 800e-3;
+const float VDS_STOP = 800e-3;
 const float VDS_INC = 5e-3;
 float VDS_OFFSET = 19e-3; //positive offset means the DAC outputs a higher-than-expected value
 float vds;     //VDS as a value from -1 to 1V
@@ -179,11 +191,11 @@ String sweep(float vds, float* vgs) {
       vmeas_bin_avg = vmeas_bin_avg / numReadings;
 
       //for 0 to 4095 integer output
-      message += String(vmeas_bin_avg);
+      //message += String(vmeas_bin_avg);
 
       //for -1 to 1 float output
-      //float vmeas_avg = bin_to_v(vmeas_bin_avg);
-      //message += String(vmeas_avg, 4);
+      float vmeas_avg = bin_to_v(vmeas_bin_avg);
+      message += String(vmeas_avg, 4);
 
       message += ",";
     }

@@ -1,0 +1,52 @@
+
+3.7 V
+start: 4:04 pm
+0 min: 25.3 C
+1 min : 33.5 C
+5 min: 44 C
+10 min: 44.5 C / 47 C
+20 min: 56.3 C (using infrared)
+30 min: 56.8 C (infrared)
+40 min: 58.3 C
+
+5V:
+start: 4:55 pm 
+0 min: 28.5 C   I = 0.5
+1 min: 60 C     I =0.61 A
+4 min: 73 C     I = 0.64 A
+6 min: 75.2 C     I = 0.64 A 
+10 min: 83 C     I = 0.64 A
+20 min: 84.9 C  I = 0.64 A
+30: 88 C        I = 0.64 A
+35 min: 90.1 C
+
+
+6.9V ;)
+start 6.29pm
+1 min: 68 C   I = 0.89 A
+3 min: 96 C   I = 0.85 A
+I poured a little bit of water
+5 min: 86 C
+10 min: 111 C I = 0.8 A 
+16 min: 114.5 C   I = 0.7 A 
+20 min: 114.5 C    I = 0.7 A 
+
+batt discharge
+
+0 mA: 4.037 V  
+100 mA: 3.982 V  
+1 A: 3.73 V (directly at source)
+    3.17 V (at load)
+    3.62 V (at load without breadboard)
+
+    after a while
+
+    3.50 V (at source)
+    3.40 V  (at load)
+    actual voltage: 3.70 V
+
+
+    500 mA: 3.75 V (at load without breadboard)
+    3.80 V (at source)
+
+    300 mA: 3.80 V (at load)
