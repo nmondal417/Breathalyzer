@@ -253,6 +253,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JVHTISAB
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs\Design Rule Check - PCB1.html
+DItemRevisionGUID=
+
 [Parameter1]
 Name=CAGE_CODE
 Value=?????
@@ -491,7 +495,7 @@ OutputDefault20=0
 [OutputGroup2]
 Name=Simulator Outputs
 Description=
-TargetPrinter=Pharos BW Printer
+TargetPrinter=HP8B9FB9 (HP OfficeJet 5200 series)
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 
 [OutputGroup3]

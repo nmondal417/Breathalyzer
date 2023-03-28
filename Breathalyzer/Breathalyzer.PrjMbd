@@ -97,7 +97,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=31a55ad3-55c5-4f2c-b048-54923e8c7ada
+DocumentUniqueId=5752efcd-9a6a-4753-adf4-9893a5b37d5f
 
 [Document4]
 DocumentPath=..\Breathalyzer_ESP32\Breathalyzer_ESP32.PrjPcb
@@ -259,7 +259,7 @@ OutputDefault20=0
 [OutputGroup2]
 Name=Simulator Outputs
 Description=
-TargetPrinter=Pharos BW Printer
+TargetPrinter=Adobe PDF
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 
 [OutputGroup3]

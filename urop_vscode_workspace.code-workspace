@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../../Users/neelm/Documents/PlatformIO/Projects/IV_Array_main_code"
+		},
+		{
+			"name": "ADC_AD7274_test",
+			"path": "../../Users/neelm/Documents/PlatformIO/Projects/ADC_AD7274_test"
+		},
+		{
+			"name": "IV_Array_NEW",
+			"path": "../../Users/neelm/Documents/PlatformIO/Projects/IV_Array_NEW"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"new": "cpp"
+		}
+	}
+}
