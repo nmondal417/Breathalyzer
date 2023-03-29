@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\college\UROP_S2022\Breathalyzer_Mux+Conn\PCB1.PcbDoc
-Date     : 3/27/2023
-Time     : 5:47:50 PM
+Date     : 3/28/2023
+Time     : 7:18:56 PM
 
 Processing Rule : Clearance Constraint (Gap=8mil) (All),(All)
 Rule Violations :0
@@ -15,7 +15,7 @@ Rule Violations :0
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=8mil) (Max=10mil) (Preferred=8mil) (All)
+Processing Rule : Width Constraint (Min=8mil) (Max=15mil) (Preferred=8mil) (All)
 Rule Violations :0
 
 Processing Rule : Routing Layers(All)
@@ -66,4 +66,4 @@ Rule Violations :0
 
 Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:01
+Time Elapsed        : 00:00:02
