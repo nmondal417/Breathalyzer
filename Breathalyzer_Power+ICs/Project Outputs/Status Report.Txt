@@ -1,0 +1,10 @@
+Output: Electrical Rules Check
+Type  : ERC
+From  : Project [Breathalyzer_Power+ICs.PrjPcb]
+   Generated File[Breathalyzer_Power+ICs.html]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 1:41:05 PM On 3/29/2023

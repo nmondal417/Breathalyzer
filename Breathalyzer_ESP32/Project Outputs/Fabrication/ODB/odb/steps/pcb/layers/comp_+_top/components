@@ -1,0 +1,1483 @@
+#
+#Component attribute names
+#
+@0 .comp_mount_type
+@1 .comp_height
+
+# CMP 0
+CMP 16 0.1325271 -0.1250054 180 N C10 100_nF ;0=1,1=0.0000
+PRP Automotive 'No'
+PRP Capacitance '0.10 µF'
+PRP Category 'Cap'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'https://content.kemet.com/datasheets/KEM_C1003_C0G_SMD.pdf'
+PRP Device_Class_L1 'Passive Components'
+PRP Device_Class_L2 'Capacitors'
+PRP Device_Class_L3 'Ceramic Capacitors'
+PRP Digikey_Description 'CAP CER 0.1UF 50V X7R 0805'
+PRP Height '0.88mm'
+PRP Ipc_Land_Pattern_Name 'CAPC200125X78'
+PRP Lead_Free 'Yes'
+PRP Manufacturer 'KEMET'
+PRP Manufacturer_Part_Number 'C0805C104K5RACTU'
+PRP Material 'Ceramic'
+PRP Mouser_Description 'Cap Ceramic 0.1uF 50V X7R 10% SMD 2.0 x 1.2 mm 125 C Paper T/R'
+PRP Octopart 'https://octopart.com/c0805c104k5ractu-kemet-143926'
+PRP Package 'C0805C-DN'
+PRP RoHS 'TRUE'
+PRP Temperature '-55°C to +125°C'
+PRP Temperature_Characteristic 'X7R'
+PRP Temperature_Coefficient '30ppm/°C'
+PRP Temperature_Range_High '+125°C'
+PRP Temperature_Range_Low '-55°C'
+PRP Tolerance '0.1'
+PRP Value '0.10 µF'
+PRP Voltage_Rating '50 V'
+TOP 0 0.1620547 -0.1250054 180 N 87 14 C10-1
+TOP 1 0.1029995 -0.1250054 180 N 79 64 C10-2
+#
+# CMP 1
+CMP 18 0.1285697 -0.2868379 0 N U6 OPA2388IDR ;0=1,1=0.0000
+PRP Max_Operating_Temperature '125°C'
+PRP Min_Operating_Temperature '-40°C'
+PRP Number_of_Channels '2'
+PRP RoHS_Compliant 'Yes'
+TOP 0 0.0355146 -0.2118379 0 N 1 1 U6-1
+TOP 1 0.0355146 -0.2618379 0 N 1 0 U6-2
+TOP 2 0.0355146 -0.3118379 0 N 86 2 U6-3
+TOP 3 0.0355146 -0.3618379 0 N 79 67 U6-4
+TOP 4 0.2216248 -0.3618379 0 N 7 2 U6-5
+TOP 5 0.2216248 -0.3118379 0 N 2 2 U6-6
+TOP 6 0.2216248 -0.2618379 0 N 2 1 U6-7
+TOP 7 0.2216248 -0.2118379 0 N 87 15 U6-8
+#
+# CMP 2
+CMP 25 -0.1300162 -0.2346663 180 N R47 100 ;0=1,1=0.0197
+PRP Manufacturer 'Vishay Dale'
+PRP Part_Number 'CRCW0805100RFKEA'
+TOP 0 -0.0975358 -0.2346663 90 N 1 2 R47-1
+TOP 1 -0.1624964 -0.2346663 90 N 10 1 R47-2
+#
+# CMP 3
+CMP 25 0.4229777 -0.1803616 0 N R46 100 ;0=1,1=0.0197
+PRP Manufacturer 'Vishay Dale'
+PRP Part_Number 'CRCW0805100RFKEA'
+TOP 0 0.3904974 -0.1803615 270 N 2 0 R46-1
+TOP 1 0.4554581 -0.1803615 270 N 8 2 R46-2
+#
+# CMP 4
+CMP 28 0.4248164 -0.3720531 0 N R45 1.2k ;0=1,1=0.0236
+PRP Manufacturer 'Panasonic'
+PRP Part_Number 'ERA6AEB122V'
+TOP 0 0.3952888 -0.3720531 270 N 79 66 R45-1
+TOP 1 0.4543439 -0.3720531 270 N 7 1 R45-2
+#
+# CMP 5
+CMP 25 0.0079534 0.0747005 0 N R44 100 ;0=1,1=0.0197
+PRP Manufacturer 'Vishay Dale'
+PRP Part_Number 'CRCW0805100RFKEA'
+TOP 0 -0.0245268 0.0747005 270 N 59 10 R44-1
+TOP 1 0.0404336 0.0747005 270 N 4 1 R44-2
+#
+# CMP 6
+CMP 25 0.1628157 0.3806939 0 N R43 100 ;0=1,1=0.0197
+PRP Manufacturer 'Vishay Dale'
+PRP Part_Number 'CRCW0805100RFKEA'
+TOP 0 0.1303355 0.3806939 270 N 6 2 R43-1
+TOP 1 0.1952959 0.3806939 270 N 5 1 R43-2
+#
+# CMP 7
+CMP 3 0.137969 0.7779466 0 N P3 61300311121 ;0=2,1=0.3362
+PRP Contact_Resistance '20mOhm'
+PRP Datasheet_URL 'https://katalog.we-online.de/em/datasheet/6130xx11121.pdf'
+PRP Gender 'Male'
+PRP Manufacturer 'Wurth Elektronik'
+PRP Manufacturer_URL 'http://www.we-online.de'
+PRP Mounting_Technology 'THT'
+PRP Operating_Temperature '-40to105degC'
+PRP Orientation 'Vertical'
+PRP Package_Reference '61300311121'
+PRP Packaging 'Bag'
+PRP Part_Number '61300311121'
+PRP Pin_Number '3'
+PRP Pitch '2.54mm'
+PRP Publisher 'WurthElektronik'
+PRP Rated_Current '3A'
+PRP Row_Number 'Single'
+PRP Withstanding_Voltage '500VAC'
+PRP Working_Voltage '250VAC'
+TOP 0 0.0379689 0.7779466 0 N 11 0 P3-1
+TOP 1 0.137969 0.7779466 0 N 49 0 P3-2
+TOP 2 0.237969 0.7779466 0 N 50 0 P3-3
+#
+# CMP 8
+CMP 0 0.7535742 -0.3106001 270 N P9 61300211021 ;0=2,1=0.1000
+PRP Contact_Resistance '20mOhm'
+PRP Datasheet_URL 'https://katalog.we-online.de/em/datasheet/6130xx11021.pdf'
+PRP Gender 'Male'
+PRP Manufacturer 'Wurth Elektronik'
+PRP Manufacturer_URL 'http://www.we-online.de'
+PRP Mounting_Technology 'THT'
+PRP Operating_Temperature '-40to105degC'
+PRP Orientation 'Angled'
+PRP Package_Reference '61300211021'
+PRP Packaging 'Bag'
+PRP Part_Number '61300211021'
+PRP Pin_Number '2'
+PRP Pitch '2.54mm'
+PRP Publisher 'WurthElektronik'
+PRP Rated_Current '3A'
+PRP Row_Number 'Single'
+PRP Withstanding_Voltage '500VAC'
+PRP Working_Voltage '250VAC'
+TOP 0 0.6445191 -0.2606002 270 N 87 4 P9-1
+TOP 1 0.6445191 -0.3606 270 N 7 0 P9-2
+#
+# CMP 9
+CMP 13 1.084458 -0.0000005 270 N J8 502352-0200 ;0=1,1=0.0000
+PRP Ambient_Temperature_Range_High '+105°C'
+PRP Ambient_Temperature_Range_Low '-40°C'
+PRP Automotive 'No'
+PRP Category 'Conn'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'https://www.molex.com/webdocs/datasheets/pdf/en-us/5023520200_PCB_HEADERS.pdf'
+PRP Conn_Gender 'Male'
+PRP Conn_Orientation 'Right Angle'
+PRP Contact_Material 'Tin,Nickel'
+PRP Current_Rating '3A'
+PRP Device_Class_L1 'Connectors'
+PRP Device_Class_L2 'Headers and Wire Housings'
+PRP Device_Class_L3 'unset'
+PRP Digikey_Description 'CONN HEADER SMD R/A 2POS 2MM'
+PRP Footprint_Url 'https://www.molex.com/pdm_docs/sd/5023520200_sd.pdf'
+PRP Height '6.6mm'
+PRP Lead_Free 'Yes'
+PRP Manufacturer 'Molex'
+PRP Manufacturer_Part_Number '502352-0200'
+PRP Mouser_Description 'DuraClik™ Wire-to-Board Header, Single Row, Right Angle, 2 Circuits, Tin (Sn)'
+PRP Number_of_Contacts '2'
+PRP Number_of_Rows '1'
+PRP Octopart 'https://octopart.com/502352-0200-molex-9519058'
+PRP Package '502352-0200'
+PRP Pitch '2mm'
+PRP RoHS 'TRUE'
+PRP System 'Connector'
+PRP Temperature '-40°C to +105°C'
+PRP Temperature_Range_High '+105°C'
+PRP Temperature_Range_Low '-40°C'
+PRP Voltage_Rating '125V'
+TOP 0 0.9454816 -0.0393706 270 N 74 9 J8-1
+TOP 1 0.9454816 0.0393696 270 N 79 69 J8-2
+TOP 2 1.1612296 -0.1397643 270 N 0 28 J8-3
+TOP 3 1.1612296 0.1397633 270 N 0 27 J8-4
+#
+# CMP 10
+CMP 16 -0.1334253 -0.3340229 0 N C9 100_nF ;0=1,1=0.0000
+PRP Automotive 'No'
+PRP Capacitance '0.10 µF'
+PRP Category 'Cap'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'https://content.kemet.com/datasheets/KEM_C1003_C0G_SMD.pdf'
+PRP Device_Class_L1 'Passive Components'
+PRP Device_Class_L2 'Capacitors'
+PRP Device_Class_L3 'Ceramic Capacitors'
+PRP Digikey_Description 'CAP CER 0.1UF 50V X7R 0805'
+PRP Height '0.88mm'
+PRP Ipc_Land_Pattern_Name 'CAPC200125X78'
+PRP Lead_Free 'Yes'
+PRP Manufacturer 'KEMET'
+PRP Manufacturer_Part_Number 'C0805C104K5RACTU'
+PRP Material 'Ceramic'
+PRP Mouser_Description 'Cap Ceramic 0.1uF 50V X7R 10% SMD 2.0 x 1.2 mm 125 C Paper T/R'
+PRP Octopart 'https://octopart.com/c0805c104k5ractu-kemet-143926'
+PRP Package 'C0805C-DN'
+PRP RoHS 'TRUE'
+PRP Temperature '-55°C to +125°C'
+PRP Temperature_Characteristic 'X7R'
+PRP Temperature_Coefficient '30ppm/°C'
+PRP Temperature_Range_High '+125°C'
+PRP Temperature_Range_Low '-55°C'
+PRP Tolerance '0.1'
+PRP Value '0.10 µF'
+PRP Voltage_Rating '50 V'
+TOP 0 -0.1629529 -0.3340229 0 N 10 2 C9-1
+TOP 1 -0.1038977 -0.3340229 0 N 79 68 C9-2
+#
+# CMP 11
+CMP 16 0.4226428 -0.2760054 180 N C8 100_nF ;0=1,1=0.0000
+PRP Automotive 'No'
+PRP Capacitance '0.10 µF'
+PRP Category 'Cap'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'https://content.kemet.com/datasheets/KEM_C1003_C0G_SMD.pdf'
+PRP Device_Class_L1 'Passive Components'
+PRP Device_Class_L2 'Capacitors'
+PRP Device_Class_L3 'Ceramic Capacitors'
+PRP Digikey_Description 'CAP CER 0.1UF 50V X7R 0805'
+PRP Height '0.88mm'
+PRP Ipc_Land_Pattern_Name 'CAPC200125X78'
+PRP Lead_Free 'Yes'
+PRP Manufacturer 'KEMET'
+PRP Manufacturer_Part_Number 'C0805C104K5RACTU'
+PRP Material 'Ceramic'
+PRP Mouser_Description 'Cap Ceramic 0.1uF 50V X7R 10% SMD 2.0 x 1.2 mm 125 C Paper T/R'
+PRP Octopart 'https://octopart.com/c0805c104k5ractu-kemet-143926'
+PRP Package 'C0805C-DN'
+PRP RoHS 'TRUE'
+PRP Temperature '-55°C to +125°C'
+PRP Temperature_Characteristic 'X7R'
+PRP Temperature_Coefficient '30ppm/°C'
+PRP Temperature_Range_High '+125°C'
+PRP Temperature_Range_Low '-55°C'
+PRP Tolerance '0.1'
+PRP Value '0.10 µF'
+PRP Voltage_Rating '50 V'
+TOP 0 0.4521705 -0.2760054 180 N 8 3 C8-1
+TOP 1 0.3931152 -0.2760053 180 N 79 65 C8-2
+#
+# CMP 12
+CMP 2 1.0223553 0.5676447 45 N J2 DNP ;0=2,1=0.3346
+PRP Contact_Resistance '20mOhm'
+PRP Datasheet_URL 'https://katalog.we-online.de/em/datasheet/6130xx11821.pdf'
+PRP Gender 'Female'
+PRP Manufacturer 'Wurth Elektronik'
+PRP Manufacturer_URL 'http://www.we-online.de'
+PRP Mounting_Technology 'THT'
+PRP Operating_Temperature '-40to125degC'
+PRP Orientation 'Vertical'
+PRP Package_Reference '61300211821'
+PRP Packaging 'Tray'
+PRP Part_Number '61300211821'
+PRP Pin_Number '2'
+PRP Pitch '2.54mm'
+PRP Publisher 'WurthElektronik'
+PRP Rated_Current '3A'
+PRP Row_Number 'Single'
+PRP Withstanding_Voltage '500VAC'
+PRP Working_Voltage '250VAC'
+TOP 0 0.987 0.603 45 N 44 0 J2-1
+TOP 1 1.0577105 0.5322895 45 N 74 0 J2-2
+#
+# CMP 13
+CMP 4 0.1165748 1.223 0 N J11 DNP ;0=2,1=0.3346
+PRP Contact_Resistance '20mOhm'
+PRP Datasheet_URL 'https://katalog.we-online.de/em/datasheet/6130xx11821.pdf'
+PRP Gender 'Female'
+PRP Manufacturer 'Wurth Elektronik'
+PRP Manufacturer_URL 'http://www.we-online.de'
+PRP Mounting_Technology 'THT'
+PRP Operating_Temperature '-40to125degC'
+PRP Orientation 'Vertical'
+PRP Package_Reference '61300311821'
+PRP Packaging 'Tray'
+PRP Part_Number '61300311821'
+PRP Pin_Number '3'
+PRP Pitch '2.54mm'
+PRP Publisher 'WurthElektronik'
+PRP Rated_Current '3A'
+PRP Row_Number 'Single'
+PRP Withstanding_Voltage '500VAC'
+PRP Working_Voltage '250VAC'
+TOP 0 0.0165748 1.223 0 N 52 0 J11-1
+TOP 1 0.1165748 1.223 0 N 51 0 J11-2
+TOP 2 0.2165748 1.223 0 N 53 0 J11-3
+#
+# CMP 14
+CMP 0 0.7627474 0.3078008 270 N P6 61300211021 ;0=2,1=0.1000
+PRP Contact_Resistance '20mOhm'
+PRP Datasheet_URL 'https://katalog.we-online.de/em/datasheet/6130xx11021.pdf'
+PRP Gender 'Male'
+PRP Manufacturer 'Wurth Elektronik'
+PRP Manufacturer_URL 'http://www.we-online.de'
+PRP Mounting_Technology 'THT'
+PRP Operating_Temperature '-40to105degC'
+PRP Orientation 'Angled'
+PRP Package_Reference '61300211021'
+PRP Packaging 'Bag'
+PRP Part_Number '61300211021'
+PRP Pin_Number '2'
+PRP Pitch '2.54mm'
+PRP Publisher 'WurthElektronik'
+PRP Rated_Current '3A'
+PRP Row_Number 'Single'
+PRP Withstanding_Voltage '500VAC'
+PRP Working_Voltage '250VAC'
+TOP 0 0.6536923 0.3578007 270 N 14 0 P6-1
+TOP 1 0.6536923 0.2578009 270 N 79 17 P6-2
+#
+# CMP 15
+CMP 6 -0.6228512 -0.9267707 45 N P5 61300621121 ;0=2,1=0.3362
+PRP Contact_Resistance '20mOhm'
+PRP Datasheet_URL 'https://katalog.we-online.de/em/datasheet/6130xx21121.pdf'
+PRP Gender 'Male'
+PRP Manufacturer 'Wurth Elektronik'
+PRP Manufacturer_URL 'http://www.we-online.de'
+PRP Mounting_Technology 'THT'
+PRP Operating_Temperature '-40to105degC'
+PRP Orientation 'Vertical'
+PRP Package_Reference '61300621121'
+PRP Packaging 'Bag'
+PRP Part_Number '61300621121'
+PRP Pin_Number '6'
+PRP Pitch '2.54mm'
+PRP Publisher 'WurthElektronik'
+PRP Rated_Current '3A'
+PRP Row_Number 'Dual'
+PRP Withstanding_Voltage '500VAC'
+PRP Working_Voltage '250VAC'
+TOP 0 -0.7289172 -0.8914154 45 N 56 0 P5-1
+TOP 1 -0.6582065 -0.8207047 45 N 87 3 P5-2
+TOP 2 -0.6582065 -0.962126 45 N 13 0 P5-3
+TOP 3 -0.5874959 -0.8914154 45 N 79 8 P5-4
+TOP 4 -0.5874959 -1.0328367 45 N 12 0 P5-5
+TOP 5 -0.5167852 -0.962126 45 N 79 9 P5-6
+#
+# CMP 16
+CMP 1 -0.9390562 0.7031282 135 N P4 61300211121 ;0=2,1=0.3362
+PRP Contact_Resistance '20mOhm'
+PRP Datasheet_URL 'https://katalog.we-online.de/em/datasheet/6130xx11121.pdf'
+PRP Gender 'Male'
+PRP Manufacturer 'Wurth Elektronik'
+PRP Manufacturer_URL 'http://www.we-online.de'
+PRP Mounting_Technology 'THT'
+PRP Operating_Temperature '-40to105degC'
+PRP Orientation 'Vertical'
+PRP Package_Reference '61300211121'
+PRP Packaging 'Bag'
+PRP Part_Number '61300211121'
+PRP Pin_Number '2'
+PRP Pitch '2.54mm'
+PRP Publisher 'WurthElektronik'
+PRP Rated_Current '3A'
+PRP Row_Number 'Single'
+PRP Withstanding_Voltage '500VAC'
+PRP Working_Voltage '250VAC'
+TOP 0 -0.9037008 0.7384836 135 N 6 0 P4-1
+TOP 1 -0.9744115 0.6677729 135 N 79 16 P4-2
+#
+# CMP 17
+CMP 9 -0.5398673 0.7677144 225 N DS2 HSMD-C170 ;0=1,1=0.0315
+PRP Bulb_Size '1.25mmx1.4mm'
+PRP Datasheet_URL 'http://docs.avagotech.com/docs/AV02-0551EN'
+PRP Datasheet_Version '03/2012'
+PRP Dominant_Wavelength '604nm'
+PRP External_Depth '0.8mm'
+PRP External_Length_/_Height '2mm'
+PRP External_Width '1.25mm'
+PRP Forward_Current_If '20mA'
+PRP Forward_Current_If_Max '20mA'
+PRP Forward_Voltage '2.2V'
+PRP Forward_Voltage_VF_Max '2.2V'
+PRP LED_Colour 'Orange'
+PRP LED_Mounting 'SMD'
+PRP LED_Type 'Standard'
+PRP Lens_Shape 'Rectangular'
+PRP Light_Area_Height '1.25mm'
+PRP Luminous_Intensity '8mcd'
+PRP Luminous_Intensity_Typ '8mcd'
+PRP Manufacturer 'Avago'
+PRP Manufacturer_URL 'http://www.avagotech.com/'
+PRP Mounting_Technology 'SurfaceMount'
+PRP Mounting_Type 'SMD'
+PRP MSL 'MSL2A-4weeks'
+PRP No._of_Pins '2'
+PRP Operating_Temperature_Max '85°C'
+PRP Operating_Temperature_Min '-30°C'
+PRP Operating_Temperature_Range '-30°Cto+85°C'
+PRP Opto_Case_Style 'SMD'
+PRP Opto_Mounting_Orientation 'Top'
+PRP Package_/_Case 'SMD'
+PRP Package_Description '2-Pin Surface Mount Device, Body 2 x 1.25 mm, Height 0.8 mm'
+PRP Package_Reference 'HSMX-C170'
+PRP Peak_Forward_Current '20mA'
+PRP Peak_Wavelength '605nm'
+PRP PIV_Max '5V'
+PRP Power_Dissipation_Pd '52mW'
+PRP Storage_Temperature_Max '85°C'
+PRP Storage_Temperature_Min '-40°C'
+PRP SVHC 'NoSVHC(19-Dec-2012)'
+PRP Viewing_Angle '170°'
+PRP Voltage_Vf_Typ '2.2V'
+PRP Wavelength_Typ '605nm'
+TOP 0 -0.5106365 0.7384836 225 N 59 6 DS2-1
+TOP 1 -0.5690982 0.7969452 225 N 78 3 DS2-2
+#
+# CMP 18
+CMP 8 -0.04 -0.5 180 N J5 61301811821 ;0=2,1=0.3346
+PRP Contact_Resistance '20mOhm'
+PRP Datasheet_URL 'https://katalog.we-online.de/em/datasheet/6130xx11821.pdf'
+PRP Gender 'Female'
+PRP Manufacturer 'Wurth Elektronik'
+PRP Manufacturer_URL 'http://www.we-online.de'
+PRP Mounting_Technology 'THT'
+PRP Operating_Temperature '-40to125degC'
+PRP Orientation 'Vertical'
+PRP Package_Reference '61301811821'
+PRP Packaging 'Tray'
+PRP Part_Number '61301811821'
+PRP Pin_Number '18'
+PRP Pitch '2.54mm'
+PRP Publisher 'WurthElektronik'
+PRP Rated_Current '3A'
+PRP Row_Number 'Single'
+PRP Withstanding_Voltage '500VAC'
+PRP Working_Voltage '250VAC'
+TOP 0 0.81 -0.5 180 N 60 1 J5-1
+TOP 1 0.71 -0.5 180 N 79 7 J5-2
+TOP 2 0.6099999 -0.5 180 N 0 9 J5-3
+TOP 3 0.5100001 -0.5 180 N 0 10 J5-4
+TOP 4 0.41 -0.5 180 N 0 11 J5-5
+TOP 5 0.31 -0.5 180 N 41 0 J5-6
+TOP 6 0.21 -0.5 180 N 40 0 J5-7
+TOP 7 0.1099999 -0.5 180 N 39 0 J5-8
+TOP 8 0.01 -0.5 180 N 38 0 J5-9
+TOP 9 -0.09 -0.5 180 N 37 0 J5-10
+TOP 10 -0.19 -0.5 180 N 36 0 J5-11
+TOP 11 -0.29 -0.5 180 N 35 0 J5-12
+TOP 12 -0.3899999 -0.5 180 N 34 0 J5-13
+TOP 13 -0.49 -0.5 180 N 8 0 J5-14
+TOP 14 -0.59 -0.5 180 N 58 0 J5-15
+TOP 15 -0.69 -0.5 180 N 77 0 J5-16
+TOP 16 -0.7900001 -0.5 180 N 10 0 J5-17
+TOP 17 -0.89 -0.5 180 N 81 0 J5-18
+#
+# CMP 19
+CMP 7 0.6836851 0.8442832 45 N J7 DNP ;0=2,1=0.3307
+PRP Contact_Resistance '20mOhm'
+PRP Datasheet_URL 'https://katalog.we-online.de/em/datasheet/6130xx21821.pdf'
+PRP Gender 'Female'
+PRP Manufacturer 'Wurth Elektronik'
+PRP Manufacturer_URL 'http://www.we-online.de'
+PRP Mounting_Technology 'THT'
+PRP Operating_Temperature '-40to125degC'
+PRP Orientation 'Vertical'
+PRP Package_Reference '61300821821'
+PRP Packaging 'Tray'
+PRP Part_Number '61300821821'
+PRP Pin_Number '8'
+PRP Pitch '2.54mm'
+PRP Publisher 'WurthElektronik'
+PRP Rated_Current '3A'
+PRP Row_Number 'Dual'
+PRP Withstanding_Voltage '500VAC'
+PRP Working_Voltage '250VAC'
+TOP 0 0.5422637 0.9149939 45 N 79 6 J7-1
+TOP 1 0.6129744 0.9857046 45 N 79 5 J7-2
+TOP 2 0.6129744 0.8442832 45 N 54 0 J7-3
+TOP 3 0.6836851 0.9149939 45 N 55 0 J7-4
+TOP 4 0.6836851 0.7735725 45 N 87 2 J7-5
+TOP 5 0.7543958 0.8442832 45 N 59 1 J7-6
+TOP 6 0.7543958 0.7028618 45 N 87 1 J7-7
+TOP 7 0.8251065 0.7735725 45 N 60 0 J7-8
+#
+# CMP 20
+CMP 22 -1.0782668 0.2890697 180 N D4 SMAJ5.0A-13-F ;0=1,1=0.0000
+PRP Automotive 'No'
+PRP Breakdown_Voltage '6.4V'
+PRP Category 'Diode'
+PRP Clamping_Voltage '9.2V'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'https://www.diodes.com/assets/Datasheets/ds19005.pdf'
+PRP Device_Class_L1 'Circuit Protection'
+PRP Device_Class_L2 'TVS Diodes'
+PRP Device_Class_L3 'unset'
+PRP Digikey_Description 'TVS DIODE 5V 9.2V SMA'
+PRP Direction 'Unidirectional'
+PRP Footprint_Url 'https://www.diodes.com/assets/Package-Files/SMA.pdf'
+PRP Height '2.4mm'
+PRP Lead_Free 'Yes'
+PRP Manufacturer 'Diodes Inc.'
+PRP Manufacturer_Part_Number 'SMAJ5.0A-13-F'
+PRP Max_Junction_Temp '+150°C'
+PRP Mouser_Description 'TVS DIODE 5V 9.2V SMA'
+PRP Number_of_Channels '1'
+PRP Octopart 'https://octopart.com/smaj5.0a-13-f-diodes+inc.-350158'
+PRP Package 'SMA'
+PRP Peak_Pulse_Current '43.5A'
+PRP Peak_Pulse_Power '400W'
+PRP Reverse_Standoff_Voltage '5V'
+PRP RoHS 'TRUE'
+PRP Standoff_Height '0.05mm'
+PRP Temperature '-55°C to +150°C'
+PRP Temperature_Range_High '+150°C'
+PRP Temperature_Range_Low '-55°C'
+TOP 0 -0.9995266 0.2890697 180 N 62 3 D4-1
+TOP 1 -1.157007 0.2890697 180 N 79 52 D4-2
+#
+# CMP 21
+CMP 22 0.9863261 -0.6147639 315 N D3 SMAJ5.0A-13-F ;0=1,1=0.0000
+PRP Automotive 'No'
+PRP Breakdown_Voltage '6.4V'
+PRP Category 'Diode'
+PRP Clamping_Voltage '9.2V'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'https://www.diodes.com/assets/Datasheets/ds19005.pdf'
+PRP Device_Class_L1 'Circuit Protection'
+PRP Device_Class_L2 'TVS Diodes'
+PRP Device_Class_L3 'unset'
+PRP Digikey_Description 'TVS DIODE 5V 9.2V SMA'
+PRP Direction 'Unidirectional'
+PRP Footprint_Url 'https://www.diodes.com/assets/Package-Files/SMA.pdf'
+PRP Height '2.4mm'
+PRP Lead_Free 'Yes'
+PRP Manufacturer 'Diodes Inc.'
+PRP Manufacturer_Part_Number 'SMAJ5.0A-13-F'
+PRP Max_Junction_Temp '+150°C'
+PRP Mouser_Description 'TVS DIODE 5V 9.2V SMA'
+PRP Number_of_Channels '1'
+PRP Octopart 'https://octopart.com/smaj5.0a-13-f-diodes+inc.-350158'
+PRP Package 'SMA'
+PRP Peak_Pulse_Current '43.5A'
+PRP Peak_Pulse_Power '400W'
+PRP Reverse_Standoff_Voltage '5V'
+PRP RoHS 'TRUE'
+PRP Standoff_Height '0.05mm'
+PRP Temperature '-55°C to +150°C'
+PRP Temperature_Range_High '+150°C'
+PRP Temperature_Range_Low '-55°C'
+TOP 0 0.9306484 -0.6704416 315 N 59 5 D3-1
+TOP 1 1.0420038 -0.5590862 315 N 79 51 D3-2
+#
+# CMP 22
+CMP 3 -0.2546781 0.777806 0 N P2 61300311121 ;0=2,1=0.3362
+PRP Contact_Resistance '20mOhm'
+PRP Datasheet_URL 'https://katalog.we-online.de/em/datasheet/6130xx11121.pdf'
+PRP Gender 'Male'
+PRP Manufacturer 'Wurth Elektronik'
+PRP Manufacturer_URL 'http://www.we-online.de'
+PRP Mounting_Technology 'THT'
+PRP Operating_Temperature '-40to105degC'
+PRP Orientation 'Vertical'
+PRP Package_Reference '61300311121'
+PRP Packaging 'Bag'
+PRP Part_Number '61300311121'
+PRP Pin_Number '3'
+PRP Pitch '2.54mm'
+PRP Publisher 'WurthElektronik'
+PRP Rated_Current '3A'
+PRP Row_Number 'Single'
+PRP Withstanding_Voltage '500VAC'
+PRP Working_Voltage '250VAC'
+TOP 0 -0.3546781 0.777806 0 N 75 0 P2-1
+TOP 1 -0.2546781 0.777806 0 N 76 1 P2-2
+TOP 2 -0.1546781 0.777806 0 N 68 0 P2-3
+#
+# CMP 23
+CMP 2 0.0925971 -0.8542057 0 N J13 DNP ;0=2,1=0.3346
+PRP Contact_Resistance '20mOhm'
+PRP Datasheet_URL 'https://katalog.we-online.de/em/datasheet/6130xx11821.pdf'
+PRP Gender 'Female'
+PRP Manufacturer 'Wurth Elektronik'
+PRP Manufacturer_URL 'http://www.we-online.de'
+PRP Mounting_Technology 'THT'
+PRP Operating_Temperature '-40to125degC'
+PRP Orientation 'Vertical'
+PRP Package_Reference '61300211821'
+PRP Packaging 'Tray'
+PRP Part_Number '61300211821'
+PRP Pin_Number '2'
+PRP Pitch '2.54mm'
+PRP Publisher 'WurthElektronik'
+PRP Rated_Current '3A'
+PRP Row_Number 'Single'
+PRP Withstanding_Voltage '500VAC'
+PRP Working_Voltage '250VAC'
+TOP 0 0.0425972 -0.8542057 0 N 22 0 J13-1
+TOP 1 0.1425972 -0.8542057 0 N 21 0 J13-2
+#
+# CMP 24
+CMP 8 -0.04 0.5 180 N J6 61301811821 ;0=2,1=0.3346
+PRP Contact_Resistance '20mOhm'
+PRP Datasheet_URL 'https://katalog.we-online.de/em/datasheet/6130xx11821.pdf'
+PRP Gender 'Female'
+PRP Manufacturer 'Wurth Elektronik'
+PRP Manufacturer_URL 'http://www.we-online.de'
+PRP Mounting_Technology 'THT'
+PRP Operating_Temperature '-40to125degC'
+PRP Orientation 'Vertical'
+PRP Package_Reference '61301811821'
+PRP Packaging 'Tray'
+PRP Part_Number '61301811821'
+PRP Pin_Number '18'
+PRP Pitch '2.54mm'
+PRP Publisher 'WurthElektronik'
+PRP Rated_Current '3A'
+PRP Row_Number 'Single'
+PRP Withstanding_Voltage '500VAC'
+PRP Working_Voltage '250VAC'
+TOP 0 0.8100001 0.5 180 N 87 0 J6-1
+TOP 1 0.7100001 0.5 180 N 0 4 J6-2
+TOP 2 0.61 0.5 180 N 0 5 J6-3
+TOP 3 0.51 0.5 180 N 0 3 J6-4
+TOP 4 0.41 0.5 180 N 33 0 J6-5
+TOP 5 0.3100001 0.5 180 N 32 0 J6-6
+TOP 6 0.2100001 0.5 180 N 31 0 J6-7
+TOP 7 0.11 0.5 180 N 30 0 J6-8
+TOP 8 0.01 0.5 180 N 29 0 J6-9
+TOP 9 -0.0899999 0.5 180 N 28 0 J6-10
+TOP 10 -0.1899999 0.5 180 N 27 0 J6-11
+TOP 11 -0.29 0.5 180 N 26 0 J6-12
+TOP 12 -0.39 0.5 180 N 76 0 J6-13
+TOP 13 -0.49 0.5 180 N 25 0 J6-14
+TOP 14 -0.5899999 0.5 180 N 0 2 J6-15
+TOP 15 -0.6899999 0.5 180 N 0 6 J6-16
+TOP 16 -0.79 0.5 180 N 24 0 J6-17
+TOP 17 -0.89 0.5 180 N 23 0 J6-18
+#
+# CMP 25
+CMP 26 -0.2757439 -0.2760048 180 N R22 100k ;0=1,1=0.0217
+PRP Manufacturer 'Vishay Dale'
+PRP Part_Number 'TNPW0805100KBEEA'
+TOP 0 -0.2452321 -0.2760048 90 N 79 58 R22-1
+TOP 1 -0.3062557 -0.2760048 90 N 86 0 R22-2
+#
+# CMP 26
+CMP 9 -0.5156936 0.8871687 225 N DS5 HSMD-C170 ;0=1,1=0.0315
+PRP Bulb_Size '1.25mmx1.4mm'
+PRP Datasheet_URL 'http://docs.avagotech.com/docs/AV02-0551EN'
+PRP Datasheet_Version '03/2012'
+PRP Dominant_Wavelength '604nm'
+PRP External_Depth '0.8mm'
+PRP External_Length_/_Height '2mm'
+PRP External_Width '1.25mm'
+PRP Forward_Current_If '20mA'
+PRP Forward_Current_If_Max '20mA'
+PRP Forward_Voltage '2.2V'
+PRP Forward_Voltage_VF_Max '2.2V'
+PRP LED_Colour 'Orange'
+PRP LED_Mounting 'SMD'
+PRP LED_Type 'Standard'
+PRP Lens_Shape 'Rectangular'
+PRP Light_Area_Height '1.25mm'
+PRP Luminous_Intensity '8mcd'
+PRP Luminous_Intensity_Typ '8mcd'
+PRP Manufacturer 'Avago'
+PRP Manufacturer_URL 'http://www.avagotech.com/'
+PRP Mounting_Technology 'SurfaceMount'
+PRP Mounting_Type 'SMD'
+PRP MSL 'MSL2A-4weeks'
+PRP No._of_Pins '2'
+PRP Operating_Temperature_Max '85°C'
+PRP Operating_Temperature_Min '-30°C'
+PRP Operating_Temperature_Range '-30°Cto+85°C'
+PRP Opto_Case_Style 'SMD'
+PRP Opto_Mounting_Orientation 'Top'
+PRP Package_/_Case 'SMD'
+PRP Package_Description '2-Pin Surface Mount Device, Body 2 x 1.25 mm, Height 0.8 mm'
+PRP Package_Reference 'HSMX-C170'
+PRP Peak_Forward_Current '20mA'
+PRP Peak_Wavelength '605nm'
+PRP PIV_Max '5V'
+PRP Power_Dissipation_Pd '52mW'
+PRP Storage_Temperature_Max '85°C'
+PRP Storage_Temperature_Min '-40°C'
+PRP SVHC 'NoSVHC(19-Dec-2012)'
+PRP Viewing_Angle '170°'
+PRP Voltage_Vf_Typ '2.2V'
+PRP Wavelength_Typ '605nm'
+TOP 0 -0.4864628 0.8579379 225 N 59 9 DS5-1
+TOP 1 -0.5449244 0.9163995 225 N 69 1 DS5-2
+#
+# CMP 27
+CMP 21 -0.7778504 0.0600243 180 N F1 MF-NSMF200-2 ;0=1,1=0.0000
+PRP Ambient_Temperature_Range_High '+85°C'
+PRP Ambient_Temperature_Range_Low '-40°C'
+PRP Automotive 'Yes'
+PRP Automotive_Grade 'Grade 3'
+PRP Category 'Fuse'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'https://bourns.com/docs/product-datasheets/mfnsmf.pdf?sfvrsn=39c76af6_14'
+PRP Current_Rating '100A'
+PRP Device_Class_L1 'Circuit Protection'
+PRP Device_Class_L2 'PTC Resettable Fuses'
+PRP Device_Class_L3 'unset'
+PRP Digikey_Description 'PTC RESET FUSE 6V 2A 1206'
+PRP Height '1.6mm'
+PRP Hold_Current '2A'
+PRP Ipc_Land_Pattern_Name 'CAPC325160X115'
+PRP Lead_Free 'Yes'
+PRP Manufacturer 'Bourns Inc.'
+PRP Manufacturer_Part_Number 'MF-NSMF200-2'
+PRP Mouser_Description 'Resettable Fuses - PPTC 2V 6V 0.02ohm (R)'
+PRP Octopart 'https://octopart.com/mf-nsmf200-2-bourns-90790'
+PRP Package 'MF-NSMF200-2'
+PRP Resistance '85mO'
+PRP RoHS 'TRUE'
+PRP Temperature '-40°C to +85°C'
+PRP Temperature_Range_High '+85°C'
+PRP Temperature_Range_Low '-40°C'
+PRP Trip_Current '4A'
+PRP Trip_Time '1s'
+PRP Value '85mO'
+PRP Voltage_Rating '6V'
+TOP 0 -0.7187953 0.0600243 180 N 62 8 F1-1
+TOP 1 -0.8369055 0.0600243 180 N 61 0 F1-2
+#
+# CMP 28
+CMP 21 0.8471318 -0.8616086 315 N F2 MF-NSMF200-2 ;0=1,1=0.0000
+PRP Ambient_Temperature_Range_High '+85°C'
+PRP Ambient_Temperature_Range_Low '-40°C'
+PRP Automotive 'Yes'
+PRP Automotive_Grade 'Grade 3'
+PRP Category 'Fuse'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'https://bourns.com/docs/product-datasheets/mfnsmf.pdf?sfvrsn=39c76af6_14'
+PRP Current_Rating '100A'
+PRP Device_Class_L1 'Circuit Protection'
+PRP Device_Class_L2 'PTC Resettable Fuses'
+PRP Device_Class_L3 'unset'
+PRP Digikey_Description 'PTC RESET FUSE 6V 2A 1206'
+PRP Height '1.6mm'
+PRP Hold_Current '2A'
+PRP Ipc_Land_Pattern_Name 'CAPC325160X115'
+PRP Lead_Free 'Yes'
+PRP Manufacturer 'Bourns Inc.'
+PRP Manufacturer_Part_Number 'MF-NSMF200-2'
+PRP Mouser_Description 'Resettable Fuses - PPTC 2V 6V 0.02ohm (R)'
+PRP Octopart 'https://octopart.com/mf-nsmf200-2-bourns-90790'
+PRP Package 'MF-NSMF200-2'
+PRP Resistance '85mO'
+PRP RoHS 'TRUE'
+PRP Temperature '-40°C to +85°C'
+PRP Temperature_Range_High '+85°C'
+PRP Temperature_Range_Low '-40°C'
+PRP Trip_Current '4A'
+PRP Trip_Time '1s'
+PRP Value '85mO'
+PRP Voltage_Rating '6V'
+TOP 0 0.8053735 -0.9033669 315 N 73 4 F2-1
+TOP 1 0.8888901 -0.8198503 315 N 59 11 F2-2
+#
+# CMP 29
+CMP 16 0.2117999 -0.0151664 180 N C6 100_nF ;0=1,1=0.0000
+PRP Automotive 'No'
+PRP Capacitance '0.10 µF'
+PRP Category 'Cap'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'https://content.kemet.com/datasheets/KEM_C1003_C0G_SMD.pdf'
+PRP Device_Class_L1 'Passive Components'
+PRP Device_Class_L2 'Capacitors'
+PRP Device_Class_L3 'Ceramic Capacitors'
+PRP Digikey_Description 'CAP CER 0.1UF 50V X7R 0805'
+PRP Height '0.88mm'
+PRP Ipc_Land_Pattern_Name 'CAPC200125X78'
+PRP Lead_Free 'Yes'
+PRP Manufacturer 'KEMET'
+PRP Manufacturer_Part_Number 'C0805C104K5RACTU'
+PRP Material 'Ceramic'
+PRP Mouser_Description 'Cap Ceramic 0.1uF 50V X7R 10% SMD 2.0 x 1.2 mm 125 C Paper T/R'
+PRP Octopart 'https://octopart.com/c0805c104k5ractu-kemet-143926'
+PRP Package 'C0805C-DN'
+PRP RoHS 'TRUE'
+PRP Temperature '-55°C to +125°C'
+PRP Temperature_Characteristic 'X7R'
+PRP Temperature_Coefficient '30ppm/°C'
+PRP Temperature_Range_High '+125°C'
+PRP Temperature_Range_Low '-55°C'
+PRP Tolerance '0.1'
+PRP Value '0.10 µF'
+PRP Voltage_Rating '50 V'
+TOP 0 0.2413275 -0.0151664 180 N 74 4 C6-1
+TOP 1 0.1822723 -0.0151664 180 N 79 62 C6-2
+#
+# CMP 30
+CMP 15 -0.319051 -0.0145594 0 N C5 4.7_uF ;0=1,1=0.0000
+PRP Capacitance '4.7uF'
+PRP Case_Code_(Imperial) '0805'
+PRP Case_Code_(Metric) '2012'
+PRP Case/Package '0805'
+PRP Construction 'Flat'
+PRP Contact_Plating 'Tin'
+PRP Depth '1.25mm'
+PRP Dielectric 'X5R'
+PRP Dielectric_Material 'Ceramic'
+PRP Dissipation_Factor '5%'
+PRP Height '1.25mm'
+PRP Lead_Free 'Lead Free'
+PRP Length '2mm'
+PRP Max_Operating_Temperature '85°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mount 'PCB'
+PRP Number_of_Pins '2'
+PRP Package_Quantity '2500'
+PRP Packaging 'Tape and Reel'
+PRP Radiation_Hardening 'No'
+PRP REACH_SVHC 'No SVHC'
+PRP RoHS_Compliant 'Yes'
+PRP Series 'C0805C'
+PRP Termination 'SMD/SMT'
+PRP Tolerance '10%'
+PRP Voltage '25V'
+PRP Voltage_Rating_(DC) '25V'
+PRP Width '1.2mm'
+TOP 0 -0.3485786 -0.0145594 0 N 79 50 C5-1
+TOP 1 -0.2895234 -0.0145594 0 N 59 4 C5-2
+#
+# CMP 31
+CMP 20 -0.449362 -0.0145594 180 N C4 10uF ;0=1,1=0.0000
+PRP Capacitance '10uF'
+PRP Case_Code_(Imperial) '0805'
+PRP Case_Code_(Metric) '2012'
+PRP Case/Package '0805'
+PRP Depth '1.25mm'
+PRP Dielectric 'X5R'
+PRP Height '1.25mm'
+PRP Lead_Free 'Lead Free'
+PRP Length '2mm'
+PRP Material 'Ceramic'
+PRP Max_Operating_Temperature '85°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mount 'Surface Mount'
+PRP Package_Quantity '1'
+PRP Packaging 'Tape and Reel'
+PRP Radiation_Hardening 'No'
+PRP REACH_SVHC 'No SVHC'
+PRP Termination 'SMD/SMT'
+PRP Thickness '0.053inch'
+PRP Tolerance '10%'
+PRP Voltage '16V'
+PRP Voltage_Rating '16V'
+PRP Voltage_Rating_(DC) '16V'
+PRP Width '1.25mm'
+TOP 0 -0.4207327 -0.0145594 180 N 79 49 C4-1
+TOP 1 -0.4779912 -0.0145594 180 N 62 2 C4-2
+#
+# CMP 32
+CMP 9 -0.9516078 -0.7083244 225 N DS4 HSMD-C170 ;0=1,1=0.0315
+PRP Bulb_Size '1.25mmx1.4mm'
+PRP Datasheet_URL 'http://docs.avagotech.com/docs/AV02-0551EN'
+PRP Datasheet_Version '03/2012'
+PRP Dominant_Wavelength '604nm'
+PRP External_Depth '0.8mm'
+PRP External_Length_/_Height '2mm'
+PRP External_Width '1.25mm'
+PRP Forward_Current_If '20mA'
+PRP Forward_Current_If_Max '20mA'
+PRP Forward_Voltage '2.2V'
+PRP Forward_Voltage_VF_Max '2.2V'
+PRP LED_Colour 'Orange'
+PRP LED_Mounting 'SMD'
+PRP LED_Type 'Standard'
+PRP Lens_Shape 'Rectangular'
+PRP Light_Area_Height '1.25mm'
+PRP Luminous_Intensity '8mcd'
+PRP Luminous_Intensity_Typ '8mcd'
+PRP Manufacturer 'Avago'
+PRP Manufacturer_URL 'http://www.avagotech.com/'
+PRP Mounting_Technology 'SurfaceMount'
+PRP Mounting_Type 'SMD'
+PRP MSL 'MSL2A-4weeks'
+PRP No._of_Pins '2'
+PRP Operating_Temperature_Max '85°C'
+PRP Operating_Temperature_Min '-30°C'
+PRP Operating_Temperature_Range '-30°Cto+85°C'
+PRP Opto_Case_Style 'SMD'
+PRP Opto_Mounting_Orientation 'Top'
+PRP Package_/_Case 'SMD'
+PRP Package_Description '2-Pin Surface Mount Device, Body 2 x 1.25 mm, Height 0.8 mm'
+PRP Package_Reference 'HSMX-C170'
+PRP Peak_Forward_Current '20mA'
+PRP Peak_Wavelength '605nm'
+PRP PIV_Max '5V'
+PRP Power_Dissipation_Pd '52mW'
+PRP Storage_Temperature_Max '85°C'
+PRP Storage_Temperature_Min '-40°C'
+PRP SVHC 'NoSVHC(19-Dec-2012)'
+PRP Viewing_Angle '170°'
+PRP Voltage_Vf_Typ '2.2V'
+PRP Wavelength_Typ '605nm'
+TOP 0 -0.922377 -0.7375552 225 N 12 2 DS4-1
+TOP 1 -0.9808386 -0.6790936 225 N 79 48 DS4-2
+#
+# CMP 33
+CMP 24 -0.4093706 0.1222951 180 N U2 MCP73833-AMI/UN ;0=1,1=0.0433
+PRP DatasheetVersion 'revB, May-2009'
+PRP PackageDescription '10-Lead Plastic Micro Small Outline Package (UN) [MSOP]'
+PRP PackageReference 'MSOP-UN10'
+PRP PackageVersion 'revBB, Aug-2009'
+TOP 0 -0.3296462 0.082925 90 N 59 3 U2-1
+TOP 1 -0.3296462 0.10261 90 N 59 2 U2-2
+TOP 2 -0.3296461 0.1222951 90 N 64 1 U2-3
+TOP 3 -0.3296461 0.1419801 90 N 63 2 U2-4
+TOP 4 -0.3296462 0.1616652 90 N 79 47 U2-5
+TOP 5 -0.489095 0.1616652 90 N 57 0 U2-6
+TOP 6 -0.4890951 0.1419801 90 N 47 0 U2-7
+TOP 7 -0.4890951 0.1222951 90 N 70 1 U2-8
+TOP 8 -0.489095 0.10261 90 N 62 0 U2-9
+TOP 9 -0.489095 0.082925 90 N 62 1 U2-10
+#
+# CMP 34
+CMP 10 0.4260992 0.1592528 0 N U1 TPS76733QDR ;0=1,1=0.0689
+PRP Accuracy(_) '2'
+PRP Code_JEDEC 'MS-012'
+PRP ComponentLink1Description 'Manufacturer URL'
+PRP ComponentLink1URL 'http://www.ti.com/'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'http://www.ti.com/general/docs/lit/getliterature.tsp?genericPartNumber=TPS76733&fileType=pdf'
+PRP ComponentLink3Description 'Package Specification'
+PRP ComponentLink3URL 'http://www.ti.com/litv/pdf/msoi002j'
+PRP DatasheetVersion 'SLVS208I'
+PRP Eco-Plan 'Green (RoHS & no Sb/Br)'
+PRP Fixed_Output_Options(V) '3.3'
+PRP Iout(Max)(A) '1'
+PRP Iq(Typ)(mA) '0.08'
+PRP Manufacturer 'Texas Instruments'
+PRP Mounting_Technology 'Surface Mount'
+PRP PackageDescription '8-Pin Plastic Small Outline, Body 4.9 x 3.9 mm, Pitch 1.27 mm'
+PRP PackageReference 'D0008A'
+PRP PackageVersion '4040047-3/M'
+PRP PartNumber 'TPS76733QDR'
+PRP SubFamily 'Single Channel LDO'
+PRP Vdo(Typ)(mV) '350'
+PRP Vin(Max)(V) '10'
+PRP Vin(Min)(V) '2.7'
+PRP Vout_Adj(Max)(V) '3.3'
+PRP Vout_Adj(Min)(V) '3.3'
+TOP 0 0.3148787 0.2342528 270 N 79 60 U1-1
+TOP 1 0.3148787 0.1842528 270 N 79 61 U1-2
+TOP 2 0.3148787 0.1342528 270 N 74 2 U1-3
+TOP 3 0.3148787 0.0842528 270 N 74 1 U1-4
+TOP 4 0.5373196 0.0842528 270 N 87 12 U1-5
+TOP 5 0.5373196 0.1342528 270 N 87 11 U1-6
+TOP 6 0.5373196 0.1842528 270 N 0 26 U1-7
+TOP 7 0.5373196 0.2342528 270 N 3 2 U1-8
+#
+# CMP 35
+CMP 26 -0.2779968 -0.1690005 180 N R15 100k ;0=1,1=0.0217
+PRP Manufacturer 'Vishay Dale'
+PRP Part_Number 'TNPW0805100KBEEA'
+TOP 0 -0.247485 -0.1690005 90 N 86 1 R15-1
+TOP 1 -0.3085086 -0.1690005 90 N 62 5 R15-2
+#
+# CMP 36
+CMP 28 -0.4060549 0.2505263 180 N R11 1.2k ;0=1,1=0.0236
+PRP Manufacturer 'Panasonic'
+PRP Part_Number 'ERA6AEB122V'
+TOP 0 -0.3765273 0.2505263 90 N 79 70 R11-1
+TOP 1 -0.4355824 0.2505263 90 N 57 1 R11-2
+#
+# CMP 37
+CMP 26 -0.6038406 0.1768787 0 N R10 1k ;0=1,1=0.0217
+PRP Manufacturer 'Vishay Dale'
+PRP Part_Number 'TNPW08051K00BEEN'
+TOP 0 -0.6343524 0.1768787 270 N 69 2 R10-1
+TOP 1 -0.5733288 0.1768787 270 N 47 1 R10-2
+#
+# CMP 38
+CMP 26 -0.1984449 0.3237135 180 N R9 1k ;0=1,1=0.0217
+PRP Manufacturer 'Vishay Dale'
+PRP Part_Number 'TNPW08051K00BEEN'
+TOP 0 -0.1679331 0.3237135 90 N 85 1 R9-1
+TOP 1 -0.2289567 0.3237135 90 N 63 1 R9-2
+#
+# CMP 39
+CMP 27 -0.595611 -0.1365858 0 N R8 10k ;0=1,1=0.0236
+PRP ComponentLink1Description 'Manufacturer URL'
+PRP ComponentLink1URL 'http://www.yageo.com/'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_04.pdf'
+PRP DatasheetVersion 'Rev. 4, 02/2016'
+PRP Height '0.5 mm'
+PRP Length '2 mm'
+PRP Manufacturer 'Yageo'
+PRP Max_Operating_Temperature '155 degC'
+PRP Min_Operating_Temperature '-55 degC'
+PRP Mount 'Surface Mount'
+PRP Mounting_Technology 'Surface Mount'
+PRP Package_Quantity '5000'
+PRP PackageDescription '2-Pin Surface Mounted Device, Body 2 x 1.25 mm'
+PRP PackageReference '0805'
+PRP Packaging 'Tape and Reel'
+PRP Pins '2'
+PRP REACH_SVHC 'No SVHC'
+PRP RoHSCompliant 'true'
+PRP Voltage_Rating '150 V'
+TOP 0 -0.6310441 -0.1365858 270 N 79 46 R8-1
+TOP 1 -0.560178 -0.1365858 270 N 14 1 R8-2
+#
+# CMP 40
+CMP 27 0.0455861 -0.0151664 180 N R7 10k ;0=1,1=0.0236
+PRP ComponentLink1Description 'Manufacturer URL'
+PRP ComponentLink1URL 'http://www.yageo.com/'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_04.pdf'
+PRP DatasheetVersion 'Rev. 4, 02/2016'
+PRP Height '0.5 mm'
+PRP Length '2 mm'
+PRP Manufacturer 'Yageo'
+PRP Max_Operating_Temperature '155 degC'
+PRP Min_Operating_Temperature '-55 degC'
+PRP Mount 'Surface Mount'
+PRP Mounting_Technology 'Surface Mount'
+PRP Package_Quantity '5000'
+PRP PackageDescription '2-Pin Surface Mounted Device, Body 2 x 1.25 mm'
+PRP PackageReference '0805'
+PRP Packaging 'Tape and Reel'
+PRP Pins '2'
+PRP REACH_SVHC 'No SVHC'
+PRP RoHSCompliant 'true'
+PRP Voltage_Rating '150 V'
+TOP 0 0.0810192 -0.0151664 90 N 79 63 R7-1
+TOP 1 0.0101531 -0.0151664 90 N 59 7 R7-2
+#
+# CMP 41
+CMP 27 0.0151617 0.2901727 180 N R6 10k ;0=1,1=0.0236
+PRP ComponentLink1Description 'Manufacturer URL'
+PRP ComponentLink1URL 'http://www.yageo.com/'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_04.pdf'
+PRP DatasheetVersion 'Rev. 4, 02/2016'
+PRP Height '0.5 mm'
+PRP Length '2 mm'
+PRP Manufacturer 'Yageo'
+PRP Max_Operating_Temperature '155 degC'
+PRP Min_Operating_Temperature '-55 degC'
+PRP Mount 'Surface Mount'
+PRP Mounting_Technology 'Surface Mount'
+PRP Package_Quantity '5000'
+PRP PackageDescription '2-Pin Surface Mounted Device, Body 2 x 1.25 mm'
+PRP PackageReference '0805'
+PRP Packaging 'Tape and Reel'
+PRP Pins '2'
+PRP REACH_SVHC 'No SVHC'
+PRP RoHSCompliant 'true'
+PRP Voltage_Rating '150 V'
+TOP 0 0.0505948 0.2901727 90 N 62 6 R6-1
+TOP 1 -0.0202713 0.2901727 90 N 6 1 R6-2
+#
+# CMP 42
+CMP 25 -0.5841737 -0.0374501 0 N R5 0 ;0=1,1=0.0197
+PRP Manufacturer 'Vishay Dale'
+PRP Part_Number 'CRCW08050000Z0EA'
+TOP 0 -0.616654 -0.0374501 270 N 70 0 R5-1
+TOP 1 -0.5516934 -0.0374501 270 N 14 2 R5-2
+#
+# CMP 43
+CMP 26 -0.1984449 0.11994 180 N R4 1k ;0=1,1=0.0217
+PRP Manufacturer 'Vishay Dale'
+PRP Part_Number 'TNPW08051K00BEEN'
+TOP 0 -0.1679331 0.11994 90 N 78 2 R4-1
+TOP 1 -0.2289567 0.11994 90 N 64 0 R4-2
+#
+# CMP 44
+CMP 26 -0.1970009 0.2233575 180 N R3 1k ;0=1,1=0.0217
+PRP Manufacturer 'Vishay Dale'
+PRP Part_Number 'TNPW08051K00BEEN'
+TOP 0 -0.1664891 0.2233575 90 N 78 1 R3-1
+TOP 1 -0.2275127 0.2233575 90 N 63 0 R3-2
+#
+# CMP 45
+CMP 25 0.7486195 0.0114084 180 N R2 0 ;0=1,1=0.0197
+PRP Manufacturer 'Vishay Dale'
+PRP Part_Number 'CRCW08050000Z0EA'
+TOP 0 0.7810997 0.0114084 90 N 3 1 R2-1
+TOP 1 0.7161391 0.0114084 90 N 77 2 R2-2
+#
+# CMP 46
+CMP 27 0.7446825 0.1110047 180 N R1 10k ;0=1,1=0.0236
+PRP ComponentLink1Description 'Manufacturer URL'
+PRP ComponentLink1URL 'http://www.yageo.com/'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_04.pdf'
+PRP DatasheetVersion 'Rev. 4, 02/2016'
+PRP Height '0.5 mm'
+PRP Length '2 mm'
+PRP Manufacturer 'Yageo'
+PRP Max_Operating_Temperature '155 degC'
+PRP Min_Operating_Temperature '-55 degC'
+PRP Mount 'Surface Mount'
+PRP Mounting_Technology 'Surface Mount'
+PRP Package_Quantity '5000'
+PRP PackageDescription '2-Pin Surface Mounted Device, Body 2 x 1.25 mm'
+PRP PackageReference '0805'
+PRP Packaging 'Tape and Reel'
+PRP Pins '2'
+PRP REACH_SVHC 'No SVHC'
+PRP RoHSCompliant 'true'
+PRP Voltage_Rating '150 V'
+TOP 0 0.7801156 0.1110047 90 N 3 0 R1-1
+TOP 1 0.7092495 0.1110047 90 N 87 9 R1-2
+#
+# CMP 47
+CMP 14 0.1588787 0.1063148 180 N Q2 SI3493DDV-T1-GE3 ;0=1,1=0.0000
+PRP Automotive 'No'
+PRP Category 'Trans'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'https://www.vishay.com/docs/74735/si3493ddv.pdf'
+PRP Continuous_Drain_Current '-7.5A'
+PRP Depletion_Mode 'False'
+PRP Device_Class_L1 'Discrete Semiconductors'
+PRP Device_Class_L2 'Transistors'
+PRP Device_Class_L3 'MOSFETs'
+PRP Digikey_Description 'MOSFET P-CHANNEL 20V 8A 6TSOP'
+PRP Drain_To_Source_Breakdown_Voltage '-20V'
+PRP Drain_To_Source_Resistance '0.02O'
+PRP Drain_To_Source_Voltage '-20V'
+PRP Footprint_Url 'https://www.vishay.com/docs/71200/71200.pdf'
+PRP Gate_Charge_At_Vgs '34.8nC @ -8V'
+PRP Gate_To_Source_Voltage '8V'
+PRP Height '1.1mm'
+PRP Input_Capacitace_At_Vds '1825pF @ -10V'
+PRP Lead_Free 'Yes'
+PRP Manufacturer 'Vishay'
+PRP Manufacturer_Part_Number 'SI3493DDV-T1-GE3'
+PRP Max_Forward_Diode_Voltage '-1.2V'
+PRP Max_Junction_Temp '+150°C'
+PRP Number_of_Channels '1'
+PRP Number_Of_P_Channels '1'
+PRP Octopart 'https://octopart.com/si3493ddv-t1-ge3-vishay-81014282'
+PRP Package 'C-06593'
+PRP Power_Dissipation '2W'
+PRP Pulse_Drain_Current '-32A'
+PRP Reverse_Recovery_Charge '34.8nC'
+PRP Reverse_Recovery_Time '21ns'
+PRP RoHS 'TRUE'
+PRP Rthja_Max '62.5°C/W'
+PRP Standoff_Height '0.01mm'
+PRP Temperature '-55°C to +150°C'
+PRP Temperature_Range_High '+150°C'
+PRP Temperature_Range_Low '-55°C'
+PRP Threshold_Vgs_Max '-1V'
+PRP Threshold_Vgs_Min '-0.4V'
+PRP Transconductance '30S'
+PRP Turn_Off_Delay_Time '95ns'
+PRP Turn_On_Delay_Time '25ns'
+PRP Typ_Forward_Diode_Voltage '-0.8V'
+TOP 0 0.2048787 0.0673148 180 N 74 5 Q2-1
+TOP 1 0.2048787 0.1063148 180 N 74 6 Q2-2
+TOP 2 0.2048787 0.1453148 180 N 4 0 Q2-3
+TOP 3 0.1128787 0.1453148 180 N 44 1 Q2-4
+TOP 4 0.1128787 0.1063148 180 N 74 7 Q2-5
+TOP 5 0.1128787 0.0673148 180 N 74 8 Q2-6
+#
+# CMP 48
+CMP 14 0.1588787 0.2604797 180 N Q1 SI3493DDV-T1-GE3 ;0=1,1=0.0000
+PRP Automotive 'No'
+PRP Category 'Trans'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'https://www.vishay.com/docs/74735/si3493ddv.pdf'
+PRP Continuous_Drain_Current '-7.5A'
+PRP Depletion_Mode 'False'
+PRP Device_Class_L1 'Discrete Semiconductors'
+PRP Device_Class_L2 'Transistors'
+PRP Device_Class_L3 'MOSFETs'
+PRP Digikey_Description 'MOSFET P-CHANNEL 20V 8A 6TSOP'
+PRP Drain_To_Source_Breakdown_Voltage '-20V'
+PRP Drain_To_Source_Resistance '0.02O'
+PRP Drain_To_Source_Voltage '-20V'
+PRP Footprint_Url 'https://www.vishay.com/docs/71200/71200.pdf'
+PRP Gate_Charge_At_Vgs '34.8nC @ -8V'
+PRP Gate_To_Source_Voltage '8V'
+PRP Height '1.1mm'
+PRP Input_Capacitace_At_Vds '1825pF @ -10V'
+PRP Lead_Free 'Yes'
+PRP Manufacturer 'Vishay'
+PRP Manufacturer_Part_Number 'SI3493DDV-T1-GE3'
+PRP Max_Forward_Diode_Voltage '-1.2V'
+PRP Max_Junction_Temp '+150°C'
+PRP Number_of_Channels '1'
+PRP Number_Of_P_Channels '1'
+PRP Octopart 'https://octopart.com/si3493ddv-t1-ge3-vishay-81014282'
+PRP Package 'C-06593'
+PRP Power_Dissipation '2W'
+PRP Pulse_Drain_Current '-32A'
+PRP Reverse_Recovery_Charge '34.8nC'
+PRP Reverse_Recovery_Time '21ns'
+PRP RoHS 'TRUE'
+PRP Rthja_Max '62.5°C/W'
+PRP Standoff_Height '0.01mm'
+PRP Temperature '-55°C to +150°C'
+PRP Temperature_Range_High '+150°C'
+PRP Temperature_Range_Low '-55°C'
+PRP Threshold_Vgs_Max '-1V'
+PRP Threshold_Vgs_Min '-0.4V'
+PRP Transconductance '30S'
+PRP Turn_Off_Delay_Time '95ns'
+PRP Turn_On_Delay_Time '25ns'
+PRP Typ_Forward_Diode_Voltage '-0.8V'
+TOP 0 0.2048787 0.2214797 180 N 44 5 Q1-1
+TOP 1 0.2048787 0.2604797 180 N 44 4 Q1-2
+TOP 2 0.2048787 0.2994797 180 N 5 0 Q1-3
+TOP 3 0.1128787 0.2994797 180 N 62 7 Q1-4
+TOP 4 0.1128787 0.2604797 180 N 44 3 Q1-5
+TOP 5 0.1128787 0.2214797 180 N 44 2 Q1-6
+#
+# CMP 49
+CMP 23 -1.115 0.0277634 90 N P7 S2B-PH-SM4-TB(LF)(SN) ;0=1,1=0.2165
+PRP Colour 'Black'
+PRP ComponentLink1Description 'Manufacturer URL'
+PRP ComponentLink1URL 'http://www.jst.com/home2.html'
+PRP ComponentLink2Description 'Datasheet'
+PRP ComponentLink2URL 'http://www.jst-mfg.com/product/pdf/eng/ePH.pdf'
+PRP Contact_Finish 'Lead'
+PRP Contact_Material 'Bronze'
+PRP Contact_Plating 'Tin'
+PRP Current_Rating '3 A'
+PRP DatasheetVersion 'Dec-12'
+PRP Height '8.13 mm'
+PRP Lead_Pitch '0.1 inch'
+PRP Length '101.19 mm'
+PRP Max_Operating_Temperature '105degC'
+PRP Min_Operating_Temperature '-65degC'
+PRP Mount 'Through Hole'
+PRP Package_Quantity '100'
+PRP PackageDescription 'Male Header, Pitch 2 mm, 1 x 2 Position, Height 5.5 mm'
+PRP PackageReference 'S2B-PH-SM4-TB(LF)(SN)-2'
+PRP Packaging 'Bulk'
+PRP Pins '40'
+PRP Radiation_Hardening 'No'
+PRP RoHSCompliant 'True'
+PRP Width '2.34 mm'
+TOP 0 -0.9791732 0.0671335 90 N 61 1 P7-1
+TOP 1 -0.9791732 -0.0116067 90 N 79 4 P7-2
+TOP 2 -1.2055512 0.1596532 90 N 0 29 P7-MP1
+TOP 3 -1.2055512 -0.1041264 90 N 0 30 P7-MP2
+#
+# CMP 50
+CMP 5 -0.686066 0.957934 135 N P1 61300411121 ;0=2,1=0.3362
+PRP Contact_Resistance '20mOhm'
+PRP Datasheet_URL 'https://katalog.we-online.de/em/datasheet/6130xx11121.pdf'
+PRP Gender 'Male'
+PRP Manufacturer 'Wurth Elektronik'
+PRP Manufacturer_URL 'http://www.we-online.de'
+PRP Mounting_Technology 'THT'
+PRP Operating_Temperature '-40to105degC'
+PRP Orientation 'Vertical'
+PRP Package_Reference '61300411121'
+PRP Packaging 'Bag'
+PRP Part_Number '61300411121'
+PRP Pin_Number '4'
+PRP Pitch '2.54mm'
+PRP Publisher 'WurthElektronik'
+PRP Rated_Current '3A'
+PRP Row_Number 'Single'
+PRP Withstanding_Voltage '500VAC'
+PRP Working_Voltage '250VAC'
+TOP 0 -0.58 1.064 135 N 59 0 P1-1
+TOP 1 -0.6507107 0.9932893 135 N 69 0 P1-2
+TOP 2 -0.7214213 0.9225787 135 N 78 0 P1-3
+TOP 3 -0.792132 0.851868 135 N 85 0 P1-4
+#
+# CMP 51
+CMP 11 0.6453 -0.7983888 135 N J1 204711-0001 ;0=1,1=0.0000
+TOP 0 0.791454 -0.771942 135 N 79 15 J1-1
+TOP 1 0.6188532 -0.9445428 135 N 79 13 J1-2
+TOP 2 0.7496957 -0.6939931 135 N 79 11 J1-3
+TOP 3 0.5409043 -0.9027845 135 N 79 10 J1-4
+TOP 4 0.6717469 -0.6522349 135 N 79 14 J1-5
+TOP 5 0.4991461 -0.8248357 135 N 79 12 J1-6
+TOP 6 0.7428751 -0.7428503 135 N 79 56 J1-A1
+TOP 7 0.7289558 -0.7567697 135 N 0 25 J1-A2
+TOP 8 0.7150363 -0.7706892 135 N 0 24 J1-A3
+TOP 9 0.7011169 -0.7846086 135 N 73 3 J1-A4
+TOP 10 0.6871975 -0.798528 135 N 72 1 J1-A5
+TOP 11 0.673278 -0.8124474 135 N 0 23 J1-A6
+TOP 12 0.6593587 -0.8263668 135 N 0 22 J1-A7
+TOP 13 0.6454392 -0.8402863 135 N 0 21 J1-A8
+TOP 14 0.6315198 -0.8542057 135 N 73 2 J1-A9
+TOP 15 0.6176004 -0.8681251 135 N 0 20 J1-A10
+TOP 16 0.6036809 -0.8820446 135 N 0 19 J1-A11
+TOP 17 0.5897615 -0.8959639 135 N 79 55 J1-A12
+TOP 18 0.5477249 -0.8539273 135 N 79 54 J1-B1
+TOP 19 0.5616442 -0.8400079 135 N 0 18 J1-B2
+TOP 20 0.5755636 -0.8260885 135 N 0 17 J1-B3
+TOP 21 0.589483 -0.8121691 135 N 73 1 J1-B4
+TOP 22 0.6034025 -0.7982496 135 N 71 1 J1-B5
+TOP 23 0.617322 -0.7843302 135 N 0 16 J1-B6
+TOP 24 0.6312414 -0.7704108 135 N 0 15 J1-B7
+TOP 25 0.6451608 -0.7564913 135 N 0 14 J1-B8
+TOP 26 0.6590803 -0.7425718 135 N 73 0 J1-B9
+TOP 27 0.6729997 -0.7286524 135 N 0 13 J1-B10
+TOP 28 0.6869191 -0.714733 135 N 0 12 J1-B11
+TOP 29 0.7008385 -0.7008137 135 N 79 53 J1-B12
+#
+# CMP 52
+CMP 9 -0.6031532 0.7092529 225 N DS3 HSMD-C170 ;0=1,1=0.0315
+PRP Bulb_Size '1.25mmx1.4mm'
+PRP Datasheet_URL 'http://docs.avagotech.com/docs/AV02-0551EN'
+PRP Datasheet_Version '03/2012'
+PRP Dominant_Wavelength '604nm'
+PRP External_Depth '0.8mm'
+PRP External_Length_/_Height '2mm'
+PRP External_Width '1.25mm'
+PRP Forward_Current_If '20mA'
+PRP Forward_Current_If_Max '20mA'
+PRP Forward_Voltage '2.2V'
+PRP Forward_Voltage_VF_Max '2.2V'
+PRP LED_Colour 'Orange'
+PRP LED_Mounting 'SMD'
+PRP LED_Type 'Standard'
+PRP Lens_Shape 'Rectangular'
+PRP Light_Area_Height '1.25mm'
+PRP Luminous_Intensity '8mcd'
+PRP Luminous_Intensity_Typ '8mcd'
+PRP Manufacturer 'Avago'
+PRP Manufacturer_URL 'http://www.avagotech.com/'
+PRP Mounting_Technology 'SurfaceMount'
+PRP Mounting_Type 'SMD'
+PRP MSL 'MSL2A-4weeks'
+PRP No._of_Pins '2'
+PRP Operating_Temperature_Max '85°C'
+PRP Operating_Temperature_Min '-30°C'
+PRP Operating_Temperature_Range '-30°Cto+85°C'
+PRP Opto_Case_Style 'SMD'
+PRP Opto_Mounting_Orientation 'Top'
+PRP Package_/_Case 'SMD'
+PRP Package_Description '2-Pin Surface Mount Device, Body 2 x 1.25 mm, Height 0.8 mm'
+PRP Package_Reference 'HSMX-C170'
+PRP Peak_Forward_Current '20mA'
+PRP Peak_Wavelength '605nm'
+PRP PIV_Max '5V'
+PRP Power_Dissipation_Pd '52mW'
+PRP Storage_Temperature_Max '85°C'
+PRP Storage_Temperature_Min '-40°C'
+PRP SVHC 'NoSVHC(19-Dec-2012)'
+PRP Viewing_Angle '170°'
+PRP Voltage_Vf_Typ '2.2V'
+PRP Wavelength_Typ '605nm'
+TOP 0 -0.5739224 0.6800221 225 N 59 8 DS3-1
+TOP 1 -0.6323839 0.7384836 225 N 85 2 DS3-2
+#
+# CMP 53
+CMP 9 -0.7968909 -0.6999823 225 N DS1 HSMD-C170 ;0=1,1=0.0315
+PRP Bulb_Size '1.25mmx1.4mm'
+PRP Datasheet_URL 'http://docs.avagotech.com/docs/AV02-0551EN'
+PRP Datasheet_Version '03/2012'
+PRP Dominant_Wavelength '604nm'
+PRP External_Depth '0.8mm'
+PRP External_Length_/_Height '2mm'
+PRP External_Width '1.25mm'
+PRP Forward_Current_If '20mA'
+PRP Forward_Current_If_Max '20mA'
+PRP Forward_Voltage '2.2V'
+PRP Forward_Voltage_VF_Max '2.2V'
+PRP LED_Colour 'Orange'
+PRP LED_Mounting 'SMD'
+PRP LED_Type 'Standard'
+PRP Lens_Shape 'Rectangular'
+PRP Light_Area_Height '1.25mm'
+PRP Luminous_Intensity '8mcd'
+PRP Luminous_Intensity_Typ '8mcd'
+PRP Manufacturer 'Avago'
+PRP Manufacturer_URL 'http://www.avagotech.com/'
+PRP Mounting_Technology 'SurfaceMount'
+PRP Mounting_Type 'SMD'
+PRP MSL 'MSL2A-4weeks'
+PRP No._of_Pins '2'
+PRP Operating_Temperature_Max '85°C'
+PRP Operating_Temperature_Min '-30°C'
+PRP Operating_Temperature_Range '-30°Cto+85°C'
+PRP Opto_Case_Style 'SMD'
+PRP Opto_Mounting_Orientation 'Top'
+PRP Package_/_Case 'SMD'
+PRP Package_Description '2-Pin Surface Mount Device, Body 2 x 1.25 mm, Height 0.8 mm'
+PRP Package_Reference 'HSMX-C170'
+PRP Peak_Forward_Current '20mA'
+PRP Peak_Wavelength '605nm'
+PRP PIV_Max '5V'
+PRP Power_Dissipation_Pd '52mW'
+PRP Storage_Temperature_Max '85°C'
+PRP Storage_Temperature_Min '-40°C'
+PRP SVHC 'NoSVHC(19-Dec-2012)'
+PRP Viewing_Angle '170°'
+PRP Voltage_Vf_Typ '2.2V'
+PRP Wavelength_Typ '605nm'
+TOP 0 -0.7676601 -0.7292131 225 N 13 2 DS1-1
+TOP 1 -0.8261217 -0.6707515 225 N 79 45 DS1-2
+#
+# CMP 54
+CMP 12 0.4260992 -0.0221021 0 N D1 MBR0530 ;0=1,1=0.0000
+PRP Average_Rectified_Current '500mA'
+PRP Contact_Plating 'Tin'
+PRP Current_Rating '500mA'
+PRP Element_Configuration 'Single'
+PRP Forward_Current '500mA'
+PRP Forward_Voltage '430mV'
+PRP Height '1.03mm'
+PRP Lead_Free 'Lead Free'
+PRP Length '2.7mm'
+PRP Max_Forward_Surge_Current_(Ifsm) '5.5A'
+PRP Max_Operating_Temperature '150°C'
+PRP Max_Repetitive_Reverse_Voltage_(Vrrm) '30V'
+PRP Max_Reverse_Leakage_Current '130uA'
+PRP Max_Reverse_Voltage_(DC) '30V'
+PRP Max_Surge_Current '5.5A'
+PRP Min_Operating_Temperature '-65°C'
+PRP Mount 'Surface Mount'
+PRP Number_of_Pins '2'
+PRP Output_Current '500mA'
+PRP Package_Quantity '1'
+PRP Packaging 'Tape and Reel'
+PRP Peak_Non-Repetitive_Surge_Current '5.5A'
+PRP Peak_Reverse_Current '130uA'
+PRP Polarity 'Standard'
+PRP Radiation_Hardening 'No'
+PRP REACH_SVHC 'No SVHC'
+PRP Voltage_Rating_(DC) '30V'
+PRP Weight '0.03g'
+PRP Width '1.6mm'
+TOP 0 0.3615992 -0.0221021 0 N 74 3 D1-1
+TOP 1 0.4905992 -0.0221021 0 N 87 13 D1-2
+#
+# CMP 55
+CMP 17 0.5946664 0.0133769 0 N C2 15uF ;0=1,1=0.0000
+PRP Capacitance '15uF'
+PRP Case_Code_(Imperial) '0805'
+PRP Case_Code_(Metric) '2012'
+PRP Case/Package '0805'
+PRP Dielectric_Material 'Ceramic'
+PRP Lead_Free 'Lead Free'
+PRP Length '0.079inch'
+PRP Max_Operating_Temperature '85°C'
+PRP Min_Operating_Temperature '-25°C'
+PRP Mount 'Surface Mount'
+PRP Package_Quantity '2000'
+PRP Packaging 'Tape and Reel'
+PRP RoHS_Compliant 'Yes'
+PRP Series 'C'
+PRP Thickness '0.057inch'
+PRP Tolerance '20%'
+PRP Voltage_Rating '25V'
+PRP Voltage_Rating_(DC) '25V'
+PRP Width '0.049inch'
+TOP 0 0.5582491 0.0133769 0 N 87 10 C2-1
+TOP 1 0.6310835 0.0133769 0 N 79 59 C2-2
+#
+# CMP 56
+CMP 19 -1.0306447 -0.2975748 180 N C1 22uF ;0=1,1=0.0000
+PRP Capacitance '22uF'
+PRP Case/Package 'Radial'
+PRP Construction 'Cylindrical'
+PRP Contact_Plating 'Tin'
+PRP Diameter '5mm'
+PRP Dielectric_Material 'Aluminium'
+PRP ESR_(Equivalent_Series_Resistance) '700mR'
+PRP Height '5.8mm'
+PRP Height_-_Seated_(Max) '0.228inch'
+PRP Impedance '700mR'
+PRP Lead_Free 'Lead Free'
+PRP Leakage_Current '3uA'
+PRP Length '5.8mm'
+PRP Life_(Hours) '2000Hour'
+PRP Material 'Aluminium'
+PRP Max_Operating_Temperature '105°C'
+PRP Min_Operating_Temperature '-55°C'
+PRP Mount 'Surface Mount'
+PRP Number_of_Pins '2'
+PRP Package_Quantity '1'
+PRP Packaging 'Tape and Reel'
+PRP Radiation_Hardening 'No'
+PRP REACH_SVHC 'No SVHC'
+PRP Ripple_Current '160mA'
+PRP Ripple_Current_(AC) '160mA'
+PRP RoHS_Compliant 'Yes'
+PRP Series 'FK'
+PRP Termination 'SMD/SMT'
+PRP Tolerance '20%'
+PRP Voltage '35V'
+PRP Voltage_Rating '35V'
+PRP Voltage_Rating_(DC) '35V'
+PRP Width '6.5mm'
+TOP 0 -0.945999 -0.2975748 180 N 79 57 C1-1
+TOP 1 -1.1152903 -0.2975748 180 N 62 4 C1-2
+#

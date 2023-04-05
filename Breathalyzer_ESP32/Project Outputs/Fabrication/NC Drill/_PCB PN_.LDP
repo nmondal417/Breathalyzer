@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: C:\college\UROP_S2022\Breathalyzer_ESP32\PCB1.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=_pcb pn_-roundholes.txt|DrillLayers=gtl,gp1,gp2,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=_pcb pn_-slotholes.txt|DrillLayers=gtl,gp1,gp2,gbl
