@@ -1,12 +1,5 @@
-//Connect resistor between VDS_BUFF and GND. Compared measured current to expected current.
-//DAC channels:
-//  0: VGS2_RAW
-//  1: VGS1_RAW
-//  2: VGS3_RAW
-//  3: VDS_RAW
-//  4: VGS4_RAW
-//  5: VGS6_RAW
-//  6: VGS5_RAW
+//test for checking the offset and gain error of the ADC and/or the DAC
+//connect one of the DAC channels to VMEAS, the ADC input
 
 #include <Arduino.h>
 #include <SPI.h>
@@ -16,11 +9,8 @@ SPIClass * vspi = NULL;
 
 static const unsigned long spiClk = 4000000; 
 
-const int dacSelectPin = 16;
+const int dacSelectPin = 5;
 const int adcSelectPin = 2;
-
-//CHANGE THIS TO MATCH RESISTOR BEING USED
-const float test_resistor = 1000;  //resistor used to test transimpedance amp; placed between drain and source voltages
 
 void setupDac();
 void writeDac(unsigned int chan, unsigned int val);
@@ -35,31 +25,30 @@ void setup() {
 
   pinMode(dacSelectPin, OUTPUT);
   pinMode(adcSelectPin, OUTPUT);
-
   digitalWrite(dacSelectPin, HIGH);
   digitalWrite(adcSelectPin, HIGH);
-  
+
   setupDac();
 }
 
 void loop() {
-  for (int i = 0; i <= 10; i++) {
-
-    int vds_bin = 50 + 400 * i;  //sweep Vds from 0V to 2V 
-    float vds = vds_bin/4096.0*2.0;
-    
-    writeDac(3, vds_bin);  //channel 3 is for Vds raw
-
-    Serial.println();
-    Serial.println("DAC output: " + String(vds));
-    Serial.println("Expected Current: " + String((vds - 1.0)/test_resistor*1000, 4) + " mA");
-    delay(1000);
-    float transimp_out = readAdc()/4096.0 * 2.0;
-    Serial.println("ADC voltage reading: " + String(readAdc()/4096.0 * 2.0, 4));
-    Serial.println("Measured Current: " + String((1.0 - transimp_out), 4) + " mA");
-    
-    delay(4000); 
+  for (int dac = 0; dac < 8; dac++) {
+    writeDac(dac, 0);
   }
+
+  delay(10);
+  
+  Serial.print("ADC reading at ideal 0V: ");
+  Serial.println(readAdc()/4096.0*2.0, 4);
+  
+  delay(2000);
+  for (int dac = 0; dac < 8; dac++) {
+    writeDac(dac, 4095);
+  }
+  delay(10);
+  Serial.print("ADC reading at ideal 2V: ");
+  Serial.println(readAdc()/4096.0*2.0, 4);
+  delay(2000);
 
 }
 

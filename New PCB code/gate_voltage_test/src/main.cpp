@@ -11,23 +11,15 @@
 #include <Arduino.h>
 #include <SPI.h>
 
-#define VSPI_MISO   MISO
-#define VSPI_MOSI   MOSI
-#define VSPI_SCLK   SCK
-
-#if CONFIG_IDF_TARGET_ESP32S2
-#define VSPI FSPI
-#endif
-
 //uninitalised pointers to SPI objects
 SPIClass * vspi = NULL;
 
 static const unsigned long spiClk = 4000000; 
 
 const int dacSelectPin = 16;
-const int chip_en = 33;
-const int gate_amp = 32;
-const int gate_shdn = 22;
+const int chip_en = 33;   //enable for the gate switch
+const int gate_amp = 32;  //bring LOW for x1 amplification, bring HIGH for x10 amplification
+const int gate_shdn = 22; //bring HIGH to enable gate voltage converter
 
 const int vgs_dac_channels [6] = {1, 0, 2, 4, 6, 5};   //address bits for gates 1-6 of the DAC
 const bool amp = false;     //true for x10 amplification, false for x1
@@ -44,15 +36,17 @@ void setup() {
   delay(500); //wait a bit (100 ms)
 
   pinMode(dacSelectPin, OUTPUT);
+  digitalWrite(dacSelectPin, HIGH);
+
   pinMode(chip_en, OUTPUT);
   pinMode(gate_amp, OUTPUT);
   pinMode(gate_shdn, OUTPUT);
 
-  digitalWrite(dacSelectPin, HIGH);
+  
   digitalWrite(gate_shdn, LOW);
   delay(4000);
 
-  //IMPORTANT: set amplification and turn on gate switch before turning on the gate converter,
+  //IMPORTANT: set amplification and turn on gate switch before turning on the gate voltage converter,
   // to ensure that proper gate voltages are outputted
   
   if (amp) digitalWrite(gate_amp, HIGH);   //set amplification of gates
@@ -71,10 +65,9 @@ void loop() {
     for (int gate = 0; gate < 6; gate++) {
       
       int voltage_binary = i*400;
-      float true_voltage;
-
-      if (amp) true_voltage = ((voltage_binary/4096.0*2.0 - 1)*10.1) + 1; 
-      else true_voltage = voltage_binary/4096.0*2.0;
+      
+      float true_voltage = amp ? ((voltage_binary/4096.0*2.0 - 1)*10.1) + 1: //amplify voltage if needed
+                                   voltage_binary/4096.0*2.0;
       writeDac(vgs_dac_channels[gate], voltage_binary); 
       Serial.println("Gate " + String(gate+1) + ": " + String(true_voltage));
     }

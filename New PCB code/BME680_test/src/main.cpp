@@ -21,16 +21,7 @@
 #include <Adafruit_Sensor.h>
 #include "Adafruit_BME680.h"
 
-//use ESP32 VSPI pins
-#define VSPI_MISO   MISO
-#define VSPI_MOSI   MOSI
-#define VSPI_SCLK   SCK
-
-#define BME_MISO   MISO
-#define BME_MOSI   MOSI
-#define BME_SCK   SCK
-
-#define BME_CS 17
+#define BME_CS 33
 
 //uninitalised pointers to SPI objects
 SPIClass * vspi = NULL;

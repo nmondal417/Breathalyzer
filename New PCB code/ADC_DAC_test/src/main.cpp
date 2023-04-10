@@ -12,14 +12,6 @@
 #include <Arduino.h>
 #include <SPI.h>
 
-#define VSPI_MISO   MISO
-#define VSPI_MOSI   MOSI
-#define VSPI_SCLK   SCK
-
-#if CONFIG_IDF_TARGET_ESP32S2
-#define VSPI FSPI
-#endif
-
 //uninitalised pointers to SPI objects
 SPIClass * vspi = NULL;
 

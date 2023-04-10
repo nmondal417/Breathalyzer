@@ -9,17 +9,20 @@ static const unsigned long spiClk = 4000000;
 const int dacSelectPin = 16;
 const int adcSelectPin = 2;
 
+const int vgs_dac_channels [6] = {1, 0, 2, 4, 6, 5};   //DAC address bits for gate voltages 1-6
+const int vds_dac_channel = 3; //channel for drain voltage
+const bool amp = false;     //true for x10 amplification, false for x1
+
 //CHANGE THIS TO MATCH RESISTOR BEING USED
-const float test_resistor = 2200;  //resistor used to test transimpedance amp; placed between drain and source voltages
+const float test_resistor = 1000;  //resistor used to test transimpedance amp; placed between drain and source voltages
 
 //source and drain mux pins
-int drain_sel [5] = {12, 0, 14, 15, 5};   //pin 12 is the LSB, pin 16 is the MSB
+int drain_sel [5] = {12, 0, 14, 15, 5};   //pin 12 is the LSB, pin 5 is the MSB
 int source_sel [5] = {21, 4, 25, 26, 27};  //pin 21 is the LSB, pin 27 is the MSB
 
-const int chip_en = 33;  //enable for the multiplexers and the gate switch
+const int chip_en = 33;  //must be brought low to enable the multiplexers and the gate switch
 const int gate_amp = 32;   //bring LOW for x1 amplification, bring HIGH for x10 amplification
-const int gate_shdn = 22;
-
+const int gate_shdn = 22;  //bring HIGH to enable gate voltage converter
 
 int powers_of_two [5] = {1, 2, 4, 8, 16};
 
@@ -40,17 +43,33 @@ void setup() {
   digitalWrite(dacSelectPin, HIGH);
   digitalWrite(adcSelectPin, HIGH);
 
-  pinMode(chip_en, OUTPUT);
+  
   for (int i = 0; i < 5; i++) {
     pinMode(drain_sel[i], OUTPUT);
     pinMode(source_sel[i], OUTPUT);
   }
 
-  digitalWrite(chip_en, LOW);  //enable the multiplexers
   for (int i = 0; i < 5; i++) {
     digitalWrite(drain_sel[i], LOW);
     digitalWrite(source_sel[i], LOW);
   }
+  
+  pinMode(chip_en, OUTPUT);
+  pinMode(gate_amp, OUTPUT);
+  pinMode(gate_shdn, OUTPUT);
+
+  digitalWrite(gate_shdn, LOW);
+  delay(4000);
+
+  //IMPORTANT: set amplification and turn on gate switch before turning on the gate voltage converter,
+  // to ensure that proper gate voltages are outputted
+  
+  if (amp) digitalWrite(gate_amp, HIGH);   //set amplification of gates
+  else digitalWrite(gate_amp, LOW);
+  digitalWrite(chip_en, LOW);              //enable the gate switch
+  delay(4000);
+
+  digitalWrite(gate_shdn, HIGH);           //turn gate voltage converter on
   
   setupDac();
 }
@@ -58,15 +77,15 @@ void setup() {
 void loop() {
   for (int i = 0; i <= 10; i++) {
 
-    int vds_bin = 1500+ 200 * i;  //sweep Vds from 0V to 1V (offset by 1V since source voltage is 1V)
+    int vds_bin = 400 * i;  //sweep Vds from 0V to 2V
     float vds = vds_bin/4096.0*2.0;
     
-    writeDac(3, vds_bin);  //channel 3 is for Vds raw
+    writeDac(vds_dac_channel, vds_bin);  
 
     Serial.println();
     Serial.println("DAC output: " + String(vds));
     Serial.println("Expected Current: " + String((vds - 1.0)/test_resistor*1000, 4) + " mA");
-
+    
     //CHANGE THIS TO TEST DIFFERENT MUTLIPLEXER CHANNELS
     multiplexer(0, 0);   //drain multiplexer channel
     multiplexer(31, 1);  //source multiplexer channel
@@ -74,6 +93,19 @@ void loop() {
     float transimp_out = readAdc()/4096.0 * 2.0;
     Serial.println("ADC voltage reading: " + String(transimp_out, 4));
     Serial.println("Measured Current: " + String((1.0 - transimp_out), 4) + " mA");
+
+    Serial.println();
+
+    //gate voltage sweep
+    for (int gate = 0; gate < 6; gate++) {
+      
+      int voltage_binary = i*50*(gate+1);  //run a different voltage sweep for each gate, just to test stuff out
+      
+      float true_voltage = amp ? ((voltage_binary/4096.0*2.0 - 1)*10.1) + 1: //amplify voltage if needed
+                                   voltage_binary/4096.0*2.0;
+      writeDac(vgs_dac_channels[gate], voltage_binary); 
+      Serial.println("Gate " + String(gate+1) + ": " + String(true_voltage));
+    }
 
     delay(4000); 
   }
