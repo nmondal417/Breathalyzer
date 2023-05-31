@@ -22,7 +22,7 @@ const int gate_amp = 32;  //bring LOW for x1 amplification, bring HIGH for x10 a
 const int gate_shdn = 22; //bring HIGH to enable gate voltage converter
 
 const int vgs_dac_channels [6] = {1, 0, 2, 4, 6, 5};   //address bits for gates 1-6 of the DAC
-const bool amp = false;     //true for x10 amplification, false for x1
+const bool amp = true;     //true for x10 amplification, false for x1
 
 void setupDac();
 void writeDac(unsigned int chan, unsigned int val);

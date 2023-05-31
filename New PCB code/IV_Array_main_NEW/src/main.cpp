@@ -133,11 +133,11 @@ void setup() {
   //BME680 setup
   while (!Serial);
   Serial.println(F("BME680 test"));
-  
+  /*
   if (!bme.begin()) {
     Serial.println("Could not find a valid BME680 sensor, check wiring!");
     while (1);
-  } 
+  } */
 
   // BME680: Set up oversampling and filter initialization
   bme.setTemperatureOversampling(BME680_OS_8X);
@@ -149,7 +149,7 @@ void setup() {
 }
 
 void loop() {
-
+  /*
   if (! bme.performReading()) {
     Serial.println("Failed to perform reading :(");
     return;
@@ -160,7 +160,7 @@ void loop() {
 
   Serial.print("Humidity = ");
   Serial.print(bme.humidity);
-  Serial.println(" %");
+  Serial.println(" %"); */
 
   memset(bluetooth_inst, 0, sizeof(bluetooth_inst));  //clear bluetooth_inst 
 
@@ -214,7 +214,7 @@ void loop() {
         Serial.println(message); 
 
         SerialBT.println(message);
-        
+        /*
         if (! bme.performReading()) {
           SerialBT.println("Failed to perform reading :(");
           return;
@@ -226,7 +226,7 @@ void loop() {
 
         SerialBT.print("Humidity = ");
         SerialBT.print(bme.humidity);
-        SerialBT.println(" %");
+        SerialBT.println(" %"); */
 
 
         memset(bluetooth_inst, 0, sizeof(bluetooth_inst));
@@ -348,8 +348,8 @@ float readAdc() {
   adc_stream = vspi->transfer16(0);   //read ADC data
   digitalWrite(adcSelectPin, HIGH);
   vspi->endTransaction();
-  Serial.print("ADC stream: ");
-  Serial.println(adc_stream, BIN);
+  //Serial.print("ADC stream: ");
+  //Serial.println(adc_stream, BIN);
   return (~(0b11 << 14) & adc_stream) >> 2;   //ignore the first two bits and the last two bits of the adc data
 }
 

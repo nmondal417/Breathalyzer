@@ -10,7 +10,7 @@ const int dacSelectPin = 16;
 const int adcSelectPin = 2;
 
 //CHANGE THIS TO MATCH RESISTOR BEING USED
-const float test_resistor = 2200;  //resistor used to test transimpedance amp; placed between drain and source voltages
+const float test_resistor = 1100;  //resistor used to test transimpedance amp; placed between drain and source voltages
 
 //source and drain mux pins
 int drain_sel [5] = {12, 0, 14, 15, 5};   //pin 12 is the LSB, pin 16 is the MSB
@@ -58,7 +58,7 @@ void setup() {
 void loop() {
   for (int i = 0; i <= 10; i++) {
 
-    int vds_bin = 1500+ 200 * i;  //sweep Vds from 0V to 1V (offset by 1V since source voltage is 1V)
+    int vds_bin = 1500 + 200 * i;  //sweep Vds from 0V to 1V (offset by 1V since source voltage is 1V)
     float vds = vds_bin/4096.0*2.0;
     
     writeDac(3, vds_bin);  //channel 3 is for Vds raw
@@ -68,7 +68,7 @@ void loop() {
     Serial.println("Expected Current: " + String((vds - 1.0)/test_resistor*1000, 4) + " mA");
 
     //CHANGE THIS TO TEST DIFFERENT MUTLIPLEXER CHANNELS
-    multiplexer(0, 0);   //drain multiplexer channel
+    multiplexer(31, 0);   //drain multiplexer channel
     multiplexer(31, 1);  //source multiplexer channel
 
     float transimp_out = readAdc()/4096.0 * 2.0;

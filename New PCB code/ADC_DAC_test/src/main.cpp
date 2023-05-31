@@ -43,13 +43,21 @@ void setup() {
 void loop() {
   for (int i = 0; i <= 10; i++) {
     
-    writeDac(4, i*400); //change first number (channel) to test all DAC channels
+    for (int j = 0; j <= 6; j++) {
+      writeDac(j, i*400);
+    }
     Serial.println();
     Serial.print("DAC output: ");
-    Serial.println((i*400.0)/4096.0*2.0);
+    float out = (i*400.0)/4096.0*2.0;
+    Serial.println(out, 3);
     
     Serial.print("ADC reading: ");
-    Serial.println(readAdc()/4096.0*2.0);
+    float read = readAdc()/4096.0*2.0;
+    Serial.println(read, 3);
+
+    Serial.print("oFfset: ");
+    float offset = read - out;
+    Serial.println(offset, 3);
     delay(4000);
   }
 
@@ -89,7 +97,7 @@ float readAdc() {
   adc_stream = vspi->transfer16(0);   //read ADC data
   digitalWrite(adcSelectPin, HIGH);
   vspi->endTransaction();
-  Serial.print("ADC stream: ");
-  Serial.println(adc_stream, BIN);
+  //Serial.print("ADC stream: ");
+  //Serial.println(adc_stream, BIN);
   return (~(0b11 << 14) & adc_stream) >> 2;   //ignore the first two bits and the last two bits of the adc data
 }

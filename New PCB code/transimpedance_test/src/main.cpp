@@ -20,7 +20,7 @@ const int dacSelectPin = 16;
 const int adcSelectPin = 2;
 
 //CHANGE THIS TO MATCH RESISTOR BEING USED
-const float test_resistor = 1000;  //resistor used to test transimpedance amp; placed between drain and source voltages
+const float test_resistor = 1100;  //resistor used to test transimpedance amp; placed between drain and source voltages
 
 void setupDac();
 void writeDac(unsigned int chan, unsigned int val);
@@ -55,7 +55,7 @@ void loop() {
     Serial.println("Expected Current: " + String((vds - 1.0)/test_resistor*1000, 4) + " mA");
     delay(1000);
     float transimp_out = readAdc()/4096.0 * 2.0;
-    Serial.println("ADC voltage reading: " + String(readAdc()/4096.0 * 2.0, 4));
+    //Serial.println("ADC voltage reading: " + String(transimp_out, 4));
     Serial.println("Measured Current: " + String((1.0 - transimp_out), 4) + " mA");
     
     delay(4000); 
@@ -97,7 +97,7 @@ float readAdc() {
   adc_stream = vspi->transfer16(0);   //read ADC data
   digitalWrite(adcSelectPin, HIGH);
   vspi->endTransaction();
-  Serial.print("ADC stream: ");
-  Serial.println(adc_stream, BIN);
+  //Serial.print("ADC stream: ");
+  //Serial.println(adc_stream, BIN);
   return (~(0b11 << 14) & adc_stream) >> 2;   //ignore the first two bits and the last two bits of the adc data
 }
