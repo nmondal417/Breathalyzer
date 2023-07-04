@@ -40,6 +40,16 @@ This PCB also contains the 1V and 2V regulators that generate reference voltages
 
 Finally, there is a mechanical switch that can completely disconnect the gate voltages from the graphene chip. This is useful for quickly turning off a voltage sweep, since if the incorrect gate voltages are accidentally applied the FET array can be destroyed.
 
+## Multiplexer
 
+https://github.com/nmondal417/Breathalyzer/tree/main/New%20PCB/Breathalyzer_Mux%2BConn
+
+This PCB contains the two main multiplexers, the ribbon cable connector, and the trasnimpedance amplifier. 
+
+The multiplexers are the ADG732. One is the drain demultiplexer, which sends the drain voltage to 1 of the 32 rows of the FET array. The other is the source muliplexer, which measures the source current from 1 of the 32 columns. 
+
+The ribbon cable connector connects to the ribbon cable that runs from this PCB to the chip interface board. This cable is the PCB's connection to the drain, gate, and source terminals on the FET array.
+
+The transimpedance ampliifer is an op-amp that is used to convert the source current measurement into a voltage. The formula is VMEAS = 1 - 1000*IDS, so an IDS of 100 uA would result in a VMEAS of 0.9V. This VMEAS is sent to the ADC.
 
 
